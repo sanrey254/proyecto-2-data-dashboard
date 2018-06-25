@@ -1,24 +1,17 @@
-Data Dashboard
+*Data Dashboard*
 
 ENTREVISTA TRAINING MANAGER
 
-¿Quiénes son los principales usuarios de producto?.
+*¿Quiénes son los principales usuarios de producto?.*
 
-R=TODOS LOS QUE CONFORMAN LABORATORIA  E INFLUYEN EL EL DESARROLLO INTELECTUAL
-DE LAS INTEGRANTES DE LABORATORIA,PRINCIPALMENTE SE TENIA PREVISTO
-ESTE PROGRAMA PARA USO EXCLUSIVO DE TRAINING MANAGER DE TODAS LAS SEDES 
-QUE CONFORMAN LABORATORIA,PERO EN ESTE MOMENTO DECIDIO AMPLIARSE
-PARA BENEFICIO DE LOS COACHES  Y TAMBIEN PARA BENEFICIO DE LOS CREADORES DE LABORATORIA.
+Todos los que conforman laboratoria e influyen en el desarrollo intelectual de las integrantes de Laboratoria,principalmente se tenia previsto este programa para uso exclusivo de los Training Manager de todas las sedes que conforman  laboratoria,aunque ahora se decidio ampliarse para beneficio de los coaches y tambien para beneficio de los creadores de Laboratoria.
 
-CON LA FINALIDAD DE PODER VER EL PROGRESO Y LAS AREAS DE OPORTUNIDAD DE LAS 
-ESTUDIANTES DE LABORATORIA Y PODER ABORDAR DE MEJORAR MANERA LOS CONFLICTOS QUE PUEDAN
-PRESENTARSE.
+Con la finalidad de poder ver el progreso y las areas de oportunidad de las estudiantes de Laboratoria y poder abordar de mejor manera los conflictos que puedan presentarse en algun momento.
 
 ¿Cuáles son los objetivos de estos usuarios en relación con el producto?
 
-R=AMBOS COMPARTEN OBJETIVOS,BUSCAN PODER VER EL DESARROLLO DE LAS ALUMNAS 
-Y ATENDER DE MANERA EFECTIVA LAS DUDAS O CONFLICTOS QUE PUEDAN PRESENTARSE 
-EN EN SENTIDO ACADEMICO. 
+ 
+Ambos comparten objetivos ,buscan poder ver el desarrolo de las alumnas y atender de manera efectiva las dudas o conflictos que puedan presentarse en sentido academico.
 
 ¿Cuáles son los datos más relevantes que quieren ver en la interfaz y
 por qué?
@@ -65,7 +58,7 @@ Cómo fue tu proceso de diseño.
 R=Tomando en cuenta los tableros existentes, ademas de que muchos tableros ya existentes se limitan a regiones especificas,y para poder usarlos se requiere pagar una mensualidad o anualidad. 
  (https://github.com/jaztan/proyecto-2-data-dashboard/blob/master/investigacion/investigacion1.png)
  (https://github.com/jaztan/proyecto-2-data-dashboard/blob/master/investigacion/investigacion2.png)
-
+(https://jazmin64.typeform.com/to/kl4Ftk)
 
 RESULTADOS ENTREVISTA A LUCILLE,NUESTRA TRAINING MANAGER DE LA SEDE DE CIUDAD DE MEXICO GENERACION 6
 
