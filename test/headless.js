@@ -3,5 +3,5 @@ global.assert = require('chai').assert;
 global.fixtures = {
   users: require('../data/laboratoria.json'),
 };
-require('../src/data');
+require('../src/data.js');
 require('./data.spec.js');
