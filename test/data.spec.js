@@ -1,5 +1,5 @@
 describe('data', () => {
-
+ 
   it('debería exponer función computeStudentsStats en objeto global', () => {
     assert.isFunction(data.computeStudentsStats);
   });
@@ -60,14 +60,14 @@ describe('data', () => {
       });
 
       it(`debería tener propiedad subtopics que es un objeto con primera key "0-bienvenida-orientacion" con valor 
-      {completado: 1, duracionSubtema: 55, tipo: "lectura"}`, () => {
+      {completedPercentage: 100, duration: 30, type: "lectura"}`, () => {
         const topics = Object.keys(processed[0].stats.topics);
         const subTopics = Object.keys(processed[0].stats.topics[topics[0]].subtopics);
        
           assert.deepEqual(processed[0].stats.topics[topics[0]].subtopics[subTopics[0]], {
-            completado: 1,
-            duracionSubtema: 55,
-            tipo: "lectura"
+            completedPercentage: 100,
+            duration: 30,
+            type: "lectura"
           });
       });
     });

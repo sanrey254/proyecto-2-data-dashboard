@@ -1,9 +1,4 @@
 window.data = {
-	getData: () =>{
-		let laboratoria = fetch('https://raw.githubusercontent.com/Laboratoria/cdmx-2018-06-bc-core-am-data-dashboard/master/data/laboratoria.json');
-		data.computeStudentsStats(laboratoria);
-	},
-
 	createSubtopics: (subtemas) => {
 		let subtopics = subtemas;
 		let propiedades = Object.values(subtopics);
@@ -25,7 +20,6 @@ window.data = {
 	createTopics: (temas) =>{
 		let topics = temas;
 		let propiedades = Object.values(topics);
-		//console.log(topics);
 		propiedades.forEach(elements => {
 			elements.completedPercentage = elements.porcentajeCompletado;
 			elements.percentageDuration = Math.round((elements.duracionTemaCompletado * 100)/elements.duracionTema);
@@ -67,26 +61,38 @@ window.data = {
 		let i = 0;
 		let y;
 		let stats = {};
-		laboratoria.then(result => result.json())
-		.then(datos =>{
-			sedes = Object.getOwnPropertyNames(datos);
-			generations = Object.values(datos);
-			generations.forEach(elements =>{
-				y = 0;
-				let years = Object.values(elements.generacion);
-				generaciones = Object.getOwnPropertyNames(elements.generacion);		
-				years.forEach(students =>{
-					let student = students.estudiantes;
-					student.forEach(personalInfo =>{
-						let stats = data.createStats(personalInfo.progreso);
-						studentsObject.push({'campus': sedes[i], 'generation': generaciones[y], 'name': personalInfo.nombre, 'email': personalInfo.correo, 'turn': personalInfo.turno, 'stats': stats});
-					})
-					y++;
+		
+		sedes = Object.getOwnPropertyNames(laboratoria);
+		generations = Object.values(laboratoria);
+		generations.forEach(elements =>{
+			y = 0;
+			let years = Object.values(elements.generacion);
+			generaciones = Object.getOwnPropertyNames(elements.generacion);		
+			years.forEach(students =>{
+				let student = students.estudiantes;
+				student.forEach(personalInfo =>{
+					let stats = data.createStats(personalInfo.progreso);
+					studentsObject.push({'campus': sedes[i], 'generation': generaciones[y], 'name': personalInfo.nombre, 'email': personalInfo.correo, 'turn': personalInfo.turno, 'stats': stats});
 				})
-				i++;
+				y++;
 			})
-			console.log(studentsObject);
-			return studentsObject;
+			i++;
 		})
+		studentsObject.forEach(student =>{
+			console.log(student.campus);
+		})
+		return studentsObject;
+	},
+
+	computeGenerationsStats: (laboratoria) =>{
+
+	},
+
+	sortStudents: (students, orderBy, orderDirection) =>{
+
+	},
+
+	filterStudents: (students, search) =>{
+
 	}
 }
