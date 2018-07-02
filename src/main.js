@@ -1,5 +1,5 @@
 const getData = () =>{
-		let laboratoria = fetch('https://raw.githubusercontent.com/Laboratoria/cdmx-2018-06-bc-core-am-data-dashboard/master/data/laboratoria.json')
+		let laboratoria = fetch('https://raw.githubusercontent.com/sanrey254/proyecto-2-data-dashboard/master/data/laboratoria.json')
 		.then(result => result.json())
 		.then(result =>{
 			const students = data.computeStudentsStats(result);
@@ -10,33 +10,34 @@ const getData = () =>{
 
 
 getData();
+
 /************ Vista Home/Inicio ***********/
 
 const drawCampus = (campus, students) =>{
 	let i  = 1;
 	let y = 1;
+	let j = 1;
 	let studentsSantiago = 0;
 	let studentsLima = 0;
 	let studentsMexico = 0;
 
 	campus.forEach(element =>{
-		document.getElementById(`sede${i++}`).innerHTML = element;
+		document.getElementById(`sedeM${i++}`).innerHTML = element;
+		document.getElementById(`sede${j++}`).innerHTML = element;
 	})
 
 	students.forEach(element =>{
-		if(element.campus === 'santiago'){
+		if(element.campus === 'Santiago'){
 			studentsSantiago++
 		}
-		if(element.campus === 'lima'){
+		if(element.campus === 'Lima'){
 			studentsLima++;
 		}
-		if (element.campus === 'mexico'){
+		if (element.campus === 'México'){
 			studentsMexico++;
 		}
 	})
-
-	console.log(studentsLima);
-
+	
 	document.getElementById(`students-sede${y++}`).innerHTML = studentsLima;
 	document.getElementById(`students-sede${y++}`).innerHTML = studentsMexico;
 	document.getElementById(`students-sede${y++}`).innerHTML = studentsSantiago;

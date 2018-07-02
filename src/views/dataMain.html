@@ -57,8 +57,14 @@
           </div>
           <span class="heading">Opciones  </span>
           <ul class="list-unstyled">
-            <li class="active"><a href="index.html"><i class="icon-home"></i>Inicio </a></li>
-            <li><a href="#"><i class="icon-grid"></i>Sedes</a></li>
+            <li class="active"><a href="dataMain.html"><i class="icon-home"></i>Inicio </a></li>
+            <li><a href="#exampledropdownDropdown" aria-expanded="false" data-toggle="collapse"> <i class="icon-interface-windows"></i>Sedes </a>
+                <ul id="exampledropdownDropdown" class="collapse list-unstyled ">
+                  <li><a href="sedeLima.html" id="sedeM1"></a></li>
+                  <li><a href="sedeMexico.html" id="sedeM2"></a></li>
+                  <li><a href="sedeSantiago.html" id="sedeM3"></a></li>
+                </ul>
+            </li>
             <li><a href="#"><i class="icon-grid"></i>Generaciones</a></li>
             <li><a href="#"> <i class="icon-interface-windows"></i>Consultas </a></li>
           </ul>
@@ -75,7 +81,7 @@
             <div class="container-fluid">
               <div class="row bg-white has-shadow">
                 <!-- Sede México-->
-                <div class="col-xl-4 col-sm-6">
+                <div class="col-xl-4 col-sm-12 col-md-4">
                   <div class="item d-flex align-items-center">
                     <div class="icon bg-blue"><i class="icon-user"></i></div>
                     <div class="title text-center">Estudiantes<br><p id="sede1"></p>
@@ -87,7 +93,7 @@
                   </div>
                 </div>
                 <!-- Sede Santiago -->
-                <div class="col-xl-4 col-sm-6">
+                <div class="col-xl-4 col-sm-12 col-md-4">
                   <div class="item d-flex align-items-center">
                     <div class="icon bg-pinkLab"><i class="icon-user"></i></div>
                     <div class="title text-center">Estudiantes<br><span id="sede2"></span>
@@ -99,7 +105,7 @@
                   </div>
                 </div>
                 <!-- Sede Lima -->
-                <div class="col-xl-4 col-sm-6">
+                <div class="col-xl-4 col-sm-12 col-md-4">
                   <div class="item d-flex align-items-center">
                     <div class="icon bg-greenLab"><i class="icon-user"></i></div>
                     <div class="title text-center">Estudiantes<br><span id="sede3"></span>
