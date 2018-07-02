@@ -47,4 +47,29 @@ const drawCampus = (campus, students) =>{
 	document.getElementById(`students-sede${y++}`).innerHTML = studentsSantiago;
 }
 
+/************ Vista sedes ***********/
+
+const drawStudentsLima(students =>{
+	campus.forEach(element =>{
+		document.getElementById(`sedeM${i++}`).innerHTML = element;
+	})
+
+	students.forEach(element =>{
+		if(element.campus === 'Santiago'){
+			studentsSantiago++
+		}
+		if(element.campus === 'Lima'){
+			studentsLima++;
+		}
+		if (element.campus === 'México'){
+			studentsMexico++;
+		}
+	})
+	
+	document.getElementById(`students-generation${y++}`).innerHTML = studentsLima;
+	document.getElementById(`students-generation${y++}`).innerHTML = studentsMexico;
+	document.getElementById(`students-generation${y++}`).innerHTML = studentsSantiago;
+
+})
+
 
