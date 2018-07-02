@@ -83,13 +83,34 @@ window.data = {
 				y++;
 			})
 			i++;
-		})	
+		})
 		return studentsObject;
 	},
 
 	computeGenerationsStats: (laboratoria) =>{
-		
-
+		let i = 0;
+		let y = 0;
+		let suma = 0;
+		generationObject = [];
+		let sedes = Object.getOwnPropertyNames(laboratoria);
+		let generaciones = Object.values(laboratoria);
+		generaciones.forEach(elements =>{
+			let years = Object.values(elements.generacion);
+			let generations = Object.getOwnPropertyNames(elements.generacion);
+			y = 0;
+			years.forEach(students =>{
+				let estudiantes = students.estudiantes;
+				estudiantes.forEach(personalInfo =>{
+					suma += personalInfo.progreso.porcentajeCompletado;
+				})
+				let average = Math.round(suma/students.estudiantes.length);
+				generationObject.push({'campus': sedes[i], 'generation': generations[y], 'count': students.estudiantes.length, 'average': average});
+				y++;
+			})
+			
+			i++;
+		})
+		return generationObject;
 	},
 
 	sortStudents: (students, orderBy, orderDirection) =>{

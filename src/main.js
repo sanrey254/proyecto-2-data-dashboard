@@ -3,6 +3,7 @@ const getData = () =>{
 		.then(result =>{
 		const students = data.computeStudentsStats(result);
 		const campus =  data.computeCampus(result);
+		const statusGeneration = data.computeGenerationsStats(result);		
 		drawCampus(campus, students);
 		drawMenu(campus);
 		//drawStudentsLima(students);
