@@ -84,6 +84,7 @@ window.data = {
 			})
 			i++;
 		})
+		console.log(studentsObject);
 		return studentsObject;
 	},
 
