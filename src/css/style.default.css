@@ -191,6 +191,11 @@ input {
   color: #fff;
 }
 
+.bg-pinkLab{
+  background: #FF009E;
+  color: #fff;
+}
+
 .bg-red:hover {
   color: #fff;
 }
@@ -213,8 +218,8 @@ input {
   color: #fff;
 }
 
-.bg-green {
-  background: #54e69d !important;
+.bg-greenLab{
+  background: #56F89A !important;
   color: #fff;
 }
 
@@ -620,7 +625,7 @@ nav.side-navbar.shrinked .sidebar-header .title {
 * ==========================================================
 */
 nav.navbar {
-  background: #ffc107;; /*YellowLaboratoria*/
+  background: #ffc107; /*YellowLaboratoria*/
   padding-top: 15px;
   padding-bottom: 15px;
   color: #211901;
@@ -933,7 +938,7 @@ section.dashboard-counts .icon {
 }
 
 section.dashboard-counts .title {
-  font-size: 1.1em;
+  font-size: 1em;
   font-weight: 300;
   color: #777;
   margin: 0 20px;
@@ -1754,8 +1759,8 @@ select option {
   z-index: -1;
   background: url(../img/bg.jpg);
   background-size: cover;
-  -webkit-filter: blur(10px);
-  filter: blur(10px);
+  -webkit-filter: blur(4px);
+  filter: blur(4px);
   z-index: 1;
   position: absolute;
   top: 0;
@@ -1787,8 +1792,8 @@ select option {
 }
 
 .login-page .form-holder .info {
-  background: rgba(121, 106, 238, 0.9);
-  color: #fff;
+  background: #ffc107; /*YellowLaboratoria*/
+  color: #000;
 }
 
 .login-page .form-holder .info h1 {
@@ -2021,14 +2026,14 @@ STYLE SWITCHER FOR DEMO
 
 .btn-primary {
   color: color-yiq(#796AEE);
-  background-color: #796AEE;
-  border-color: #796AEE;
+  background-color: #ffc107; /*YellowLaboratoria*/
+  border-color: #c5a239;
 }
 
 .btn-primary:hover {
   color: color-yiq(#5a48ea);
-  background-color: #5a48ea;
-  border-color: #503ce9;
+  background-color: #e0a800;
+  border-color: #c5a239;
 }
 
 .btn-primary:focus, .btn-primary.focus {
@@ -2038,15 +2043,15 @@ STYLE SWITCHER FOR DEMO
 
 .btn-primary.disabled, .btn-primary:disabled {
   color: color-yiq(#796AEE);
-  background-color: #796AEE;
-  border-color: #796AEE;
+  background-color: #ffc107; /*YellowLaboratoria*/
+  border-color: #c5a239;
 }
 
 .btn-primary:not(:disabled):not(.disabled):active, .btn-primary:not(:disabled):not(.disabled).active,
 .show > .btn-primary.dropdown-toggle {
   color: color-yiq(#503ce9);
-  background-color: #503ce9;
-  border-color: #4631e7;
+  background-color: #ffc107; /*YellowLaboratoria*/
+  border-color: #c5a239;
 }
 
 .btn-primary:not(:disabled):not(.disabled):active:focus, .btn-primary:not(:disabled):not(.disabled).active:focus,
@@ -2658,7 +2663,7 @@ body {
 }
 
 a {
-  color: #796AEE;
+  color: #ffc107; /*YellowLaboratoria*/;
   text-decoration: none;
 }
 

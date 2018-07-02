@@ -53,6 +53,12 @@ window.data = {
 		return stats;	
 	},
 
+	computeCampus: (laboratoria) => {
+		let campus = [];
+		campus = Object.getOwnPropertyNames(laboratoria);
+		return campus
+	},
+
 	computeStudentsStats: (laboratoria) => {
 		let studentsObject = [];
 		let sedes = [];
@@ -77,9 +83,6 @@ window.data = {
 				y++;
 			})
 			i++;
-		})
-		studentsObject.forEach(student =>{
-			console.log(student.campus);
 		})
 		return studentsObject;
 	},
