@@ -83,12 +83,12 @@ window.data = {
 				y++;
 			})
 			i++;
-		})
-		console.log(studentsObject);
+		})	
 		return studentsObject;
 	},
 
 	computeGenerationsStats: (laboratoria) =>{
+		
 
 	},
 
