@@ -1,13 +1,25 @@
-const getData = () =>{
-		let laboratoria = fetch('https://raw.githubusercontent.com/sanrey254/proyecto-2-data-dashboard/master/data/laboratoria.json').then(result => result.json())
+const url = 'https://raw.githubusercontent.com/sanrey254/proyecto-2-data-dashboard/master/data/laboratoria.json';
+
+const getDataMain = () =>{
+		let laboratoria = fetch(url).then(result => result.json())
 		.then(result =>{
 		const students = data.computeStudentsStats(result);
 		const campus =  data.computeCampus(result);
 		const statusGeneration = data.computeGenerationsStats(result);		
 		drawCampus(campus, students);
 		drawMenu(campus);
-		//drawStudentsLima(students);
 	})	
+}
+
+const getDataSede = (sede) =>{
+	let laboratoria = fetch(url).then(result => result.json())
+		.then(result =>{
+		const students = data.computeStudentsStats(result);
+		const statusGeneration = data.computeGenerationsStats(result);	
+		const campus =  data.computeCampus(result);	
+		drawStudents(statusGeneration, sede);
+		drawMenu(campus);
+	})
 }
 
 const firstLetter = string => {
@@ -52,43 +64,25 @@ const drawCampus = (campus, students) =>{
 
 /************ Vista sedes ***********/
 
-const drawStudentsLima = students =>{
-	let generations = [];
-	let studentsGeneration1 = 0;
-	let studentsGeneration2 = 0;
-	let studentsGeneration3 = 0;
+const drawStudents = (generations, sede) =>{
 	let y = 1;
-	students.forEach(elements =>{
-		if(elements.campus === 'Lima'){	
+	let years = [];
+	let students = [];
+	generations.forEach(elements =>{
+		if(elements.campus === sede){	
 			if(generations.indexOf(elements.generation) === -1){
-				generations.push(elements.generation);
+				years.push(elements.generation);
+				students.push(elements.count);
 			}
 		}
 	})
 	let i = 1;
-	generations.forEach(generation =>{
+	years.forEach(generation =>{
 		document.getElementById(`generation${i++}`).innerHTML = `${firstLetter(generation)} <br> generación`;
 	})
 
-	students.forEach(students =>{
-		if(students.campus === 'Lima'){
-			if(students.generation === generations[0]){
-				studentsGeneration1++;
-			}
-			if(students.generation === generations[1]){
-				studentsGeneration2++;
-			}
-			if(students.generation === generations[2]){
-				studentsGeneration3++;
-			}
-		}
-	})
-
-	document.getElementById(`students-generation${y++}`).innerHTML = studentsGeneration1;
-	document.getElementById(`students-generation${y++}`).innerHTML = studentsGeneration2;
-	document.getElementById(`students-generation${y++}`).innerHTML = studentsGeneration3;
+	document.getElementById(`students-generation${y++}`).innerHTML = students[0];
+	document.getElementById(`students-generation${y++}`).innerHTML = students[1];
+	document.getElementById(`students-generation${y++}`).innerHTML = students[2];
 }
-
-
-getData();
 

@@ -77,7 +77,49 @@
           </header>
           <!-- Seccion principal de visualización-->
           <section class="dashboard-counts no-padding-bottom">
-            
+            <div class="container-fluid">
+              <div class="row bg-white has-shadow">
+                <div class="col-xl-4 col-sm-12 col-md-4">
+                  <div class="item d-flex align-items-center">
+                    <a href="#">
+                      <div class="title text-center"><p id="generation1"></p>
+                        <div class="progress">
+                          <div role="progressbar" style="width: 85%; height: 4px;" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100" class="progress-bar bg-blue"></div>
+                        </div>
+                      </div>
+                    </a>
+                    <div class="number"><strong id="students-generation1"></strong></div>
+                    <div class="icon bg-blue margin-left"><i class="icon-user"></i></div>
+                  </div>
+                </div>
+                <div class="col-xl-4 col-sm-12 col-md-4">
+                  <div class="item d-flex align-items-center">
+                    <a href="#">
+                      <div class="title text-center"><p id="generation2"></p>
+                        <div class="progress">
+                          <div role="progressbar" style="width: 90%; height: 4px;" aria-valuenow="70" aria-valuemin="0" aria-valuemax="100" class="progress-bar bg-pinkLab"></div>
+                        </div>
+                      </div>
+                    </a>
+                    <div class="number"><strong id="students-generation2"></strong></div>
+                    <div class="icon bg-pinkLab margin-left"><i class="icon-user"></i></div>
+                  </div>
+                </div>
+                <div class="col-xl-4 col-sm-12 col-md-4">
+                  <div class="item d-flex align-items-center">
+                    <a href="#">
+                      <div class="title text-center"><p id="generation3"></p>
+                        <div class="progress">
+                          <div role="progressbar" style="width: 90%; height: 4px;" aria-valuenow="40" aria-valuemin="0" aria-valuemax="100" class="progress-bar bg-greenLab"></div>
+                        </div>
+                      </div>
+                    </a>
+                    <div class="number"><strong id="students-generation3"></strong></div>
+                    <div class="icon bg-greenLab margin-left"><i class="icon-user"></i></div>
+                  </div>
+                </div>
+              </div>
+            </div>
           </section>
           <!-- Page Footer-->
           <footer class="main-footer">
@@ -100,5 +142,8 @@
     <script src="../js/front.js"></script>
     <script src="../data.js"></script>
     <script src="../main.js"></script>
+    <script>
+      getDataSede('Santiago');
+    </script>
   </body>
 </html>

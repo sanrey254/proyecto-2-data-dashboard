@@ -1,5 +1,5 @@
 window.data = {
-	createSubtopics: (subtemas) => {
+	createSubtopics: subtemas => {
 		let subtopics = subtemas;
 		let propiedades = Object.values(subtopics);
 		propiedades.forEach(elements => {
@@ -17,7 +17,7 @@ window.data = {
 		return subtopics;
 	},
 
-	createTopics: (temas) =>{
+	createTopics: temas =>{
 		let topics = temas;
 		let propiedades = Object.values(topics);
 		propiedades.forEach(elements => {
@@ -34,7 +34,7 @@ window.data = {
 		return topics;
 	},
 
-	createStats: (progress) =>{
+	createStats: progress =>{
 		let stats = {
 			status: '',
 			completedPercentage: 0,
@@ -53,13 +53,13 @@ window.data = {
 		return stats;	
 	},
 
-	computeCampus: (laboratoria) => {
+	computeCampus: laboratoria => {
 		let campus = [];
 		campus = Object.getOwnPropertyNames(laboratoria);
 		return campus
 	},
 
-	computeStudentsStats: (laboratoria) => {
+	computeStudentsStats: laboratoria => {
 		let studentsObject = [];
 		let sedes = [];
 		let nombres = [];
@@ -87,7 +87,7 @@ window.data = {
 		return studentsObject;
 	},
 
-	computeGenerationsStats: (laboratoria) =>{
+	computeGenerationsStats: laboratoria =>{
 		let i = 0;
 		let y = 0;
 		let suma = 0;
