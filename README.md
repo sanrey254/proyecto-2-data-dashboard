@@ -1,3 +1,161 @@
+
+ 
+ # DATA DASHBOARD
+
+## ENTREVISTA TRAINING MANAGER
+
+### ¿Quiénes son los principales usuarios de producto?.
+
+Todos los que conforman laboratoria e influyen en el desarrollo intelectual de las integrantes de Laboratoria,principalmente se tenia previsto este programa para uso exclusivo de los Training Manager de todas las sedes que conforman  laboratoria,aunque ahora se decidio ampliarse para beneficio de los coaches y tambien para beneficio de los creadores de Laboratoria.
+
+Con la finalidad de poder ver el progreso y las areas de oportunidad de las estudiantes de Laboratoria y poder abordar de mejor manera los conflictos que puedan presentarse en algun momento.
+
+###  ¿Cuáles son los objetivos de estos usuarios en relación con el producto?
+
+ 
+Ambos comparten objetivos ,buscan poder ver el desarrolo de las alumnas y atender de manera efectiva las dudas o conflictos que puedan presentarse en sentido academico.
+
+###  ¿Cuáles son los datos más relevantes que quieren ver en la interfaz y por qué?
+
+1:Primero la informacion de las sedes *¿Porque?* para poder saber con cuantas sedes cuentan.
+
+2:La generación *¿Porque?* Para saber con cuantas generaciones cuentan.
+
+3:Promedio por generacion.
+*¿Porque?*Para saber que calificaion tuvo cada generacion y por sede.
+
+4:La informacion de las egresadas *¿Porque?* Para  saber cuantas estudiantes lograron concluir el bootcamp.
+ 
+5:Temas vistos y desempeño de cada alumna egresada *¿Porque?* para medir el desempeñode cada alumna. 
+
+6:Informacion de las estudiantes *¿Porque?* Le permite saber con cuantas estudiantes cuenta en la generacion actual.
+
+7:Temas abarcados y desempeño por tema *¿Porque?* Le permite saber que temas conocen las estudiantes y que temas abordar en futuras clases.
+
+
+
+
+## ¿ Cómo los descubriste?
+
+### Preguntando que parametros toman para futuros temas.
+
+*Preguntando que parametros toman para futuras clases que se les daran a las alumnas,ademas de que es como miden su evolucion y les permite a ellos implementar mejoras al programa educativo.*
+
+
+### Cuándo revisan normalmente estos datos los usuarios.
+
+*Lo hacen constantemente ,para saber que mejoras implementar.*
+
+*Cómo crees que el producto les está resolviendo sus problemas.*
+
+*En gran manera porque hace mas accesible obtener la información deseada.*
+
+## Cómo fue tu proceso de diseño.
+
+#### Tomando en cuenta los tableros existentes, ademas de que muchos tableros ya existentes se limitan a regiones especificas,y para poder usarlos se requiere pagar una mensualidad o anualidad.
+ 
+
+
+ ![investigacionUno](src/img/investigacion1.png)
+
+ ![investigacion2](src/img/investigacion2.png)
+
+
+ ![investigacion3](src/img/investigacion3.png)
+
+
+ ![investigacion4](src/img/investigacion4.png)
+
+
+
+ ![investigacion6](src/img/investigacion5.png)
+
+
+ ![investigacionfinal](src/img/investigacion6.png)
+
+ ![diagrama](src/img/diagramadeflujo.png)
+
+
+ 
+
+### RESULTADOS ENTREVISTA A LUCILLE
+
+*NUESTRA TRAINING MANAGER DE LA SEDE DE CIUDAD DE MEXICO GENERACION 6*
+
+**1.Actualmente no hay ,no existe una manera fácil de obtener dicha informacion,todo se hace atravez de excel y es muy tedioso el proceso.**
+
+
+**No le importan mucho las gráficas,prefiere que el programa sea fácil de usar**
+
+**Seria una excelente idea el usar usuario y contraseña ya que así solo estaría disponible para usuarios concretos pertenecientes a Laboratoria.**
+
+ **Es prioridad que pueda usarse en diferentes plataformas,ya que seria muy útil poder acceder a el desde el móvil**
+
+2:Es importante contar con el tablero de datos para poder tomar decisión para un mejor desarrollo de las alumnas.
+
+
+
+Cuestionario en linea (https://jazmin64.typeform.com/to/kl4Ftk)
+
+Prototipo para Android (https://marvelapp.com/31i025f/screen/45103195)
+
+Protitipo para Pc ()
+
+#### ALGORITMO DATADASHBOARD
+
+#### Mostrar pantalla con nombre de laboratoria
+
+#### La interfaz debe permitir al usuario:
+
+#### Pedir que ingrese usuario y contraseña.
+
+#### Una vez ingresado el usuario y contraseña.
+
+#### Apareceran el nombre de  las sedes con las que cuenta laboratoria
+
+#### Listar y poder seleccionar sedes
+
+#### Dentro de cada sede:
+
+#### Listar y poder seleccionar generaciones
+
+#### Para cada generación:
+
+#### En la vista de cada generación mostrar reporte de:
+
+#### Promedio de la generación
+
+
+#### Listar y poder seleccionar estudiantes mostrando porcentaje general de completitud de cada estudiante.
+
+#### Seleccionar estudiantes mostrando reporte de progreso:
+
+#### Poder filtrar estudiantes por estos dos status.
+
+#### Poder ordenar de manera ascendente y descendente a las estudiantes según porcentaje de completitud.
+
+#### Generar status para identificar estudiantes debajo del 60 en su porcentaje de completitud.
+
+#### Generar status para identificar estudiantes con 90 o más en su porcentaje de completitud.
+
+
+#### Mostrar porcentaje de completitud de todos los temas.
+
+#### Calcular porcentaje de tiempo completado de cada tema.
+
+#### Listar subtemas de cada tema.
+
+#### Poder filtrar subtemas completados y no-completados de cada tema.
+
+#### Poder filtrar subtemas por tipos (ejercicios, lecturas y quizzes).
+
+
+#### Filtrar y poder buscar estudiantes por nombre.
+
+#### Mostrar foto y datos personales de la estudiante.
+
+
+
 # Data Dashboard
 
 ## Preámbulo
