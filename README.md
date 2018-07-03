@@ -73,8 +73,7 @@ Ambos comparten objetivos ,buscan poder ver el desarrolo de las alumnas y atende
 
  ![investigacionfinal](src/img/investigacion6.png)
 
- ![diagrama]
-  (src/img/DIAGRAMA DE FLUJO DATADASHBOARD.png)
+ ![diagrama](src/img/diagramadeflujo.png)
 
 
  
@@ -95,6 +94,12 @@ Ambos comparten objetivos ,buscan poder ver el desarrolo de las alumnas y atende
 2:Es importante contar con el tablero de datos para poder tomar decisión para un mejor desarrollo de las alumnas.
 
 
+
+Cuestionario en linea (https://jazmin64.typeform.com/to/kl4Ftk)
+
+Prototipo para Android (https://marvelapp.com/31i025f/screen/45103195)
+
+Protitipo para Pc ()
 
 #### ALGORITMO DATADASHBOARD
 
