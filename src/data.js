@@ -1,5 +1,5 @@
-window.data = {
-	createSubtopics: (subtemas) => {
+window.data = {//objeto global
+	createSubtopics: (subtemas) => {//funcion y parametro
 		let subtopics = subtemas;
 		let propiedades = Object.values(subtopics);
 		propiedades.forEach(elements => {
