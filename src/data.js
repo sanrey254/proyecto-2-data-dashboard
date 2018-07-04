@@ -1,5 +1,7 @@
+
 window.data = {
 	createSubtopics: subtemas => {
+
 		let subtopics = subtemas;
 		let propiedades = Object.values(subtopics);
 		propiedades.forEach(elements => {
