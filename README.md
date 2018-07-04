@@ -1,6 +1,10 @@
 
  
- # DATA DASHBOARD
+ 
+# DATA DASHBOARD
+
+
+
 
 ## ENTREVISTA TRAINING MANAGER
 
@@ -54,26 +58,59 @@ Ambos comparten objetivos ,buscan poder ver el desarrolo de las alumnas y atende
 
 #### Tomando en cuenta los tableros existentes, ademas de que muchos tableros ya existentes se limitan a regiones especificas,y para poder usarlos se requiere pagar una mensualidad o anualidad.
  
-
-
- ![investigacionUno](src/img/investigacion1.png)
-
- ![investigacion2](src/img/investigacion2.png)
-
-
- ![investigacion3](src/img/investigacion3.png)
-
-
- ![investigacion4](src/img/investigacion4.png)
+ ![tablerosexistentes](src/img/tablerosexistentes.png)
 
 
 
- ![investigacion6](src/img/investigacion5.png)
+![tableroagencyanalitic](src/img/tableroagencyanalitic.png)
 
 
- ![investigacionfinal](src/img/investigacion6.png)
+
+ ![agencyanaliticinicio](src/img/agencyanaliticinicio.png)
+
+
+
+
+
+
+ ### En esta imagen tomamos en cuenta el Tablero de Datos llamado "CLIC DATA"
+ ###  El cual esta limitado su uso para dos regiones ,las cuales son ; Irlanda y Virginia.
+ ### Ademas de que tiene un costo
+
+ ![clicdata](src/img/clicdata.png)
+![tablerozohohreports](src/img/tablerozohoreports.png)
+![zohoreportscosto](src/img/zohoreportscosto.png)
+
+
+### Realizamos una encuestra y comparamos los resultados obtenidos.
+
+
+ ![cuestionariopreguntas](src/img/cuestionariopreguntas.png)
+
+ 
+
+ ![cuestionarioresultados](src/img/cuestionarioresultados.png)
+
+
+
+#### En esta imagen se puede observar nuestro sketch.
+
+![investigacion6](src/img/sketch1.png)
+
+
+![investigacion6](src/img/sketch2.png)
+
+
+![investigacion6](src/img/sketch3.png)
+
+
+#### El Proceso para Diseñar el programa fue basandonos en los resultados obtenidos por nuestros usuarios,mediante entrevistas y encuestas para poder reforzar o modificar nuestro prototipo.
+
+ ![primeralcance](src/img/primeralcance.png)
 
  ![diagrama](src/img/diagramadeflujo.png)
+
+
 
 
  
@@ -99,7 +136,26 @@ Cuestionario en linea (https://jazmin64.typeform.com/to/kl4Ftk)
 
 Prototipo para Android (https://marvelapp.com/31i025f/screen/45103195)
 
-Protitipo para Pc ()
+### Asi luce el diseño probado en plataforma mobile.
+
+ ![testeoprueba1](src/img/testeoprueba1.png)
+
+
+![testeoprueba2](src/img/testeoprueba2.png)
+
+
+
+
+Prototipo para Pc (https://marvelapp.com/3jdjh1j/screen/45140790)
+
+###  Asi luce el diseño probado en plataforma web.
+
+
+  ![segundoalcance](src/img/segundoalcance.png)
+
+ ![segujndoalcanceb](src/img/segundoalcanceb.png)
+
+
 
 #### ALGORITMO DATADASHBOARD
 
