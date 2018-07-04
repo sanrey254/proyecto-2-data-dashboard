@@ -22,6 +22,14 @@ const getDataSede = (sede) =>{
 	})
 }
 
+const getDataGeneration = () => {
+	let laboratoria = fetch(url).then(result => result.json())
+		.then(result =>{
+		const students = data.computeStudentsStats(result);
+		drawGenerations(students);
+	})
+}
+
 const firstLetter = string => {
     return string.charAt(0).toUpperCase() + string.slice(1);
 }
@@ -86,3 +94,17 @@ const drawStudents = (generations, sede) =>{
 	document.getElementById(`students-generation${y++}`).innerHTML = students[2];
 }
 
+/************ Vista generaciones ***********/
+
+const drawGenerations = (generations) =>{
+
+
+}
+
+
+const getLocation = () =>{
+	const location = window.location.href;
+	const position = location.indexOf('?');
+	const generation = location.slice(position+1, location.length);
+	console.log(generation);
+}

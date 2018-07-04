@@ -67,7 +67,7 @@ window.data = {
 		let i = 0;
 		let y;
 		let stats = {};
-		
+		//console.log(laboratoria);
 		sedes = Object.getOwnPropertyNames(laboratoria);
 		generations = Object.values(laboratoria);
 		generations.forEach(elements =>{
@@ -84,6 +84,7 @@ window.data = {
 			})
 			i++;
 		})
+		console.log(studentsObject);
 		return studentsObject;
 	},
 
