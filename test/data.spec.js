@@ -21,8 +21,7 @@ describe('data', () => {
     const { laboratoria } = fixtures;
 
     it('debería retornar arreglo de students con propiedad campus y propiedad generation', () => {
-      const processed = data.computeStudentsStats(laboratoria);
-
+      const processed = data.computeStudentsStats(laboratoria); 
       processed.forEach((student) => {
         assert.ok(student.hasOwnProperty('campus'));
         assert.ok(student.hasOwnProperty('generation'));

@@ -1,5 +1,7 @@
-window.data = {//objeto global
-	createSubtopics: (subtemas) => {//funcion y parametro
+
+window.data = {
+	createSubtopics: subtemas => {
+
 		let subtopics = subtemas;
 		let propiedades = Object.values(subtopics);
 		propiedades.forEach(elements => {
@@ -17,7 +19,7 @@ window.data = {//objeto global
 		return subtopics;
 	},
 
-	createTopics: (temas) =>{
+	createTopics: temas =>{
 		let topics = temas;
 		let propiedades = Object.values(topics);
 		propiedades.forEach(elements => {
@@ -34,7 +36,7 @@ window.data = {//objeto global
 		return topics;
 	},
 
-	createStats: (progress) =>{
+	createStats: progress =>{
 		let stats = {
 			status: '',
 			completedPercentage: 0,
@@ -53,13 +55,13 @@ window.data = {//objeto global
 		return stats;	
 	},
 
-	computeCampus: (laboratoria) => {
+	computeCampus: laboratoria => {
 		let campus = [];
 		campus = Object.getOwnPropertyNames(laboratoria);
 		return campus
 	},
 
-	computeStudentsStats: (laboratoria) => {
+	computeStudentsStats: laboratoria => {
 		let studentsObject = [];
 		let sedes = [];
 		let nombres = [];
@@ -84,12 +86,33 @@ window.data = {//objeto global
 			})
 			i++;
 		})
-		console.log(studentsObject);
 		return studentsObject;
 	},
 
-	computeGenerationsStats: (laboratoria) =>{
-
+	computeGenerationsStats: laboratoria =>{
+		let i = 0;
+		let y = 0;
+		let suma = 0;
+		generationObject = [];
+		let sedes = Object.getOwnPropertyNames(laboratoria);
+		let generaciones = Object.values(laboratoria);
+		generaciones.forEach(elements =>{
+			let years = Object.values(elements.generacion);
+			let generations = Object.getOwnPropertyNames(elements.generacion);
+			y = 0;
+			years.forEach(students =>{
+				let estudiantes = students.estudiantes;
+				estudiantes.forEach(personalInfo =>{
+					suma += personalInfo.progreso.porcentajeCompletado;
+				})
+				let average = Math.round(suma/students.estudiantes.length);
+				generationObject.push({'campus': sedes[i], 'generation': generations[y], 'count': students.estudiantes.length, 'average': average});
+				y++;
+			})
+			
+			i++;
+		})
+		return generationObject;
 	},
 
 	sortStudents: (students, orderBy, orderDirection) =>{
