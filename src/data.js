@@ -35,7 +35,8 @@ window.data = {
 		fetch(url).then(result => result.json())
 			.then(result =>{
 			const students = data.computeStudentsStats(result);
-			drawGenerations(students);
+			const campus = data.computeCampus(result);
+			drawMenu(campus);
 		})
 		.catch(error =>{
 			console.log('Error');

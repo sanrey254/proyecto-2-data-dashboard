@@ -37,7 +37,7 @@ const drawCampus = (campus, students) =>{
 }
 
 const drawGeneralStatistics = (students, sede) =>{
-	const namesGroup = ['Total de estudiantes', 'Estudiantes arriba de 90%', 'Estudiantes en media', 'Estudiantes debajo del 60%']
+	const namesGroup = ['Total de estudiantes', 'PROGRESO: arriba del 90%', 'PROGRESO: en la media', 'PROGRESO: debajo del 60%']
 	const studentsNumber = [0,0,0,0];
 	let filterStudents = [];
 	let result = '';
