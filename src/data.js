@@ -181,9 +181,6 @@ window.data = {
 
 	filterStudents: (students, search) =>{
 		const searchStudentData = [];
-		if(search === ''){
-			return searchStudentData;
-		}
 		students.forEach(student =>{
 			if(student.name.indexOf(search) != -1){
 				searchStudentData.push(student);

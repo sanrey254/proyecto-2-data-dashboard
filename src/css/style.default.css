@@ -1291,6 +1291,9 @@ section.dashboard-counts div[class*='col-']:last-of-type .item {
 * ==========================================================
 */
 
+.table-striped tbody tr:nth-of-type(odd){
+  background-color: #ffc1071f;
+}
 
 /*====== Trending Articles Box ======*/
 .articles a {
@@ -1312,7 +1315,7 @@ section.dashboard-counts div[class*='col-']:last-of-type .item {
 }
 
 .articles .item:nth-of-type(even) {
-  background: #fafafa;
+  background: #ffc1071f;
 }
 
 .articles .item .image {
@@ -2671,7 +2674,7 @@ a:focus, a:hover {
 }
 
 .tags-search{
-  padding-bottom: 10px;
+  padding-bottom: 3px;
   font-size: 0.8em;
   font-weight: 600;
 }
