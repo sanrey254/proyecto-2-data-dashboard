@@ -128,7 +128,7 @@ table {
 *[class*="icon-"] {
   -webkit-transform: translateY(3px);
   transform: translateY(3px);
-}
+} 
 
 button,
 input {
@@ -2668,6 +2668,12 @@ a {
 
 a:focus, a:hover {
   color: #3b25e6;
+}
+
+.tags-search{
+  padding-bottom: 10px;
+  font-size: 0.8em;
+  font-weight: 600;
 }
 
 h1,

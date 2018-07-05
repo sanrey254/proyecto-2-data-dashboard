@@ -43,6 +43,19 @@ window.data = {
 		})
 	},
 
+	getDataSearch: () =>{
+		fetch(url).then(result => result.json())
+		.then(result =>{
+			const students = data.computeStudentsStats(result);
+			const campus = data.computeCampus(result);
+			drawSearchStudent(students);
+			drawMenu(campus);
+		})
+		.catch(error =>{
+			console.log('Error');
+		})
+	},
+
 	firstLetterToUpperCase: string => {
     	return string.charAt(0).toUpperCase() + string.slice(1);
 	},
@@ -167,7 +180,16 @@ window.data = {
 	},
 
 	filterStudents: (students, search) =>{
-
+		const searchStudentData = [];
+		if(search === ''){
+			return searchStudentData;
+		}
+		students.forEach(student =>{
+			if(student.name.indexOf(search) != -1){
+				searchStudentData.push(student);
+			}
+		})
+		return searchStudentData;
 	},
 
 	filterStudentsBySede: (students, sede) =>{

@@ -109,7 +109,9 @@ describe('data', () => {
 
   describe('filterStudents(users, search)', () => {
 
-    it('debería retornar nuevo arreglo solo con estudiantes con nombres que contengan string (case insensitive)');
+    it('debería retornar nuevo arreglo solo con estudiantes con nombres que contengan string (case insensitive)', () =>{
+      
+    });
 
   });
 });

@@ -104,20 +104,43 @@ const drawStudentsTable = (students, sede) =>{
                       <td>${student.email}</td>
                       <td>${data.firstLetterToUpperCase(student.generation)}</td>
                       <td>${student.stats.completedPercentage} %</td>
-                    </tr>`
+                    </tr>`;
 	})
 	document.getElementById('table-students-body').innerHTML = result;
 }
 /************ Vista generaciones ***********/
-
-const drawGenerations = generations =>{
-
-
-}
-
 const getLocation = () =>{
 	const location = window.location.href;
 	const position = location.indexOf('?');
 	const generation = location.slice(position+1, location.length);
 	//console.log(generation);
 }
+
+
+/************ Vista Consultas ***********/
+const drawSearchStudent = (students) =>{
+	document.getElementById('btn-seach').addEventListener('click', (event) =>{
+		event.preventDefault();
+		const searchNameStudent = document.getElementById('name-student').value;
+		const studentResult = data.filterStudents(students, searchNameStudent);
+		const headerSearchCard = `<div class="card-header d-flex align-items-center">
+								  <h2 class="h3">Resultados de la consulta</h2>
+								  <div class="badge badge-rounded bg-pinkLab">${studentResult.length} coincidencias</div>
+								</div><div class="card-body no-padding" id="body-student-card"></div>`;
+		document.getElementById('header-student-card').innerHTML = headerSearchCard;
+		let bodySearchCard = '';
+		document.getElementById('body-student-card').innerHTML = '';
+		if(studentResult.length != 0){
+			studentResult.forEach(result =>{
+			bodySearchCard += `<div class="item d-flex align-items-center">
+				                  <div class="text">
+				                    <p><span class='tags-search'>Nombre:</span> ${result.name}</p><p><span class='tags-search'>Sede:</span> ${result.campus} - ${data.firstLetterToUpperCase(result.generation)} generación </p><p><span class='tags-search'>Correo:</span> ${result.email}</p><p><span class='tags-search'>Progreso:</span> ${result.stats.completedPercentage}% completitud</p>
+				                  </div>
+				               </div>`;
+			})
+			document.getElementById('body-student-card').innerHTML = bodySearchCard;
+		}
+		
+	})
+}
+
