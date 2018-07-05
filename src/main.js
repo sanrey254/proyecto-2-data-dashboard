@@ -151,7 +151,7 @@ const drawStudentsTable = (students, sede) =>{
                       <td>${student.name}</td>
                       <td>${student.email}</td>
                       <td>${firstLetter(student.generation)}</td>
-                      <td>${student.turn}</td>
+                      <td>${student.stats.completedPercentage} %</td>
                     </tr>`
 	})
 	document.getElementById('table-students-body').innerHTML = result;
