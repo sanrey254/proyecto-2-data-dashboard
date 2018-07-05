@@ -5,7 +5,8 @@ const getDataMain = () =>{
 		.then(result =>{
 		const students = data.computeStudentsStats(result);
 		const campus =  data.computeCampus(result);
-		const statusGeneration = data.computeGenerationsStats(result);		
+		const statusGeneration = data.computeGenerationsStats(result);
+		drawGeneralStatistics(students,'General');		
 		drawCampus(campus, students);
 		drawMenu(campus);
 	})	
@@ -17,6 +18,7 @@ const getDataSede = (sede) =>{
 		const students = data.computeStudentsStats(result);
 		const statusGeneration = data.computeGenerationsStats(result);	
 		const campus =  data.computeCampus(result);	
+		drawGeneralStatistics(students, sede);
 		drawStudents(statusGeneration, sede);
 		drawMenu(campus);
 	})
@@ -33,6 +35,17 @@ const getDataGeneration = () => {
 const firstLetter = string => {
     return string.charAt(0).toUpperCase() + string.slice(1);
 }
+
+const filterStudentsBySede = (students, sede) =>{
+	const filterStudents = [];
+	students.forEach(student =>{
+		if(student.campus === sede){
+			filterStudents.push(student);
+		}
+	})
+	return filterStudents;
+}
+
 
 /************ Vista Home/Inicio ***********/
 const drawMenu = (campus) =>{
@@ -70,6 +83,40 @@ const drawCampus = (campus, students) =>{
 	document.getElementById(`students-sede${y++}`).innerHTML = studentsSantiago;
 }
 
+const drawGeneralStatistics = (students, sede) =>{
+	const namesGroup = ['Total de estudiantes', 'Estudiantes arriba de 90%', 'Estudiantes en media', 'Estudiantes debajo del 60%']
+	const studentsNumber = [0,0,0,0];
+	let filterStudents = [];
+	let result = '';
+	if(sede === 'General'){
+		filterStudents = students;
+	}else{
+		filterStudents = filterStudentsBySede(students, sede);
+	}
+	studentsNumber[0] = filterStudents.length;
+	filterStudents.forEach(student =>{
+		if(student.stats.status === 'top'){
+			studentsNumber[1]++;
+		}
+		if(student.stats.status === 'media'){
+			studentsNumber[2]++;
+		}
+		if(student.stats.status === 'bottom'){
+			studentsNumber[3]++;
+		}
+	})
+	
+	for(let i = 0; i < 4; i++){
+		result+= `<div class="statistics col-lg-3 col-12">
+                  	<div class="statistic d-flex align-items-center bg-white has-shadow">
+                    	<div class="icon bg-red"><i class="fa fa-line-chart"></i></div>
+                    	<div class="text"><strong>${studentsNumber[i]}</strong><br><small>${namesGroup[i]}</small></div>
+                 	</div>
+                </div>`
+	}
+
+	document.getElementById('general-statistic').innerHTML = result;
+}
 /************ Vista sedes ***********/
 
 const drawStudents = (generations, sede) =>{
@@ -106,5 +153,5 @@ const getLocation = () =>{
 	const location = window.location.href;
 	const position = location.indexOf('?');
 	const generation = location.slice(position+1, location.length);
-	console.log(generation);
+	//console.log(generation);
 }

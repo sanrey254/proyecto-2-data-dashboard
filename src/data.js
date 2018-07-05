@@ -84,7 +84,7 @@ window.data = {
 			})
 			i++;
 		})
-		console.log(studentsObject);
+		//console.log(studentsObject);
 		return studentsObject;
 	},
 
@@ -115,6 +115,7 @@ window.data = {
 	},
 
 	sortStudents: (students, orderBy, orderDirection) =>{
+		
 
 	},
 

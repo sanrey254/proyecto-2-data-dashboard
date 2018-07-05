@@ -1008,7 +1008,6 @@ section.dashboard-counts div[class*='col-']:last-of-type .item {
 
 .statistic small {
   color: #aaa;
-  text-transform: uppercase;
 }
 
 .statistic .icon {
