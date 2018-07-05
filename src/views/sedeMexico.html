@@ -110,9 +110,40 @@
               </div>
             </div>
           </section>
-          <section class="dashboard-header">
+          <!-- Sección Estadisticas Generales -->
+          <section class="dashboard-header no-padding-bottom">
             <div class="container-fluid">
               <div class="row" id="general-statistic"></div>
+            </div>
+          </section>
+          <!-- Sección Tabla de estudiantes -->
+          <section class="tables">   
+            <div class="container-fluid">
+              <div class="row">
+                <div class="col-lg-12">
+                  <div class="card">
+                    <div class="card-header d-flex align-items-center">
+                      <h3 class="h4">Estudiantes</h3>
+                    </div>
+                    <div class="card-body">
+                      <div class="table-responsive">   
+                        <table class="table table-striped table-sm">
+                          <thead>
+                            <tr>
+                              <th>#</th>
+                              <th>Nombre</th>
+                              <th>Correo</th>
+                              <th>Generación</th>
+                              <th>Turno</th>
+                            </tr>
+                          </thead>
+                          <tbody id="table-students-body"></tbody>
+                        </table>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
             </div>
           </section>
           <footer class="main-footer">

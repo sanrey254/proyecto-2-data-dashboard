@@ -19,7 +19,8 @@ const getDataSede = (sede) =>{
 		const statusGeneration = data.computeGenerationsStats(result);	
 		const campus =  data.computeCampus(result);	
 		drawGeneralStatistics(students, sede);
-		drawStudents(statusGeneration, sede);
+		drawStudentsTable(students, sede);
+		drawNumberOfStudents(statusGeneration, sede);
 		drawMenu(campus);
 	})
 }
@@ -119,7 +120,7 @@ const drawGeneralStatistics = (students, sede) =>{
 }
 /************ Vista sedes ***********/
 
-const drawStudents = (generations, sede) =>{
+const drawNumberOfStudents = (generations, sede) =>{
 	let y = 1;
 	let years = [];
 	let students = [];
@@ -141,9 +142,23 @@ const drawStudents = (generations, sede) =>{
 	document.getElementById(`students-generation${y++}`).innerHTML = students[2];
 }
 
+const drawStudentsTable = (students, sede) =>{
+	const filterStudents = filterStudentsBySede(students, sede);
+	let result = '';
+	filterStudents.forEach((student, i) =>{
+		result += `<tr>
+                      <th scope="row">${i+1}</th>
+                      <td>${student.name}</td>
+                      <td>${student.email}</td>
+                      <td>${firstLetter(student.generation)}</td>
+                      <td>${student.turn}</td>
+                    </tr>`
+	})
+	document.getElementById('table-students-body').innerHTML = result;
+}
 /************ Vista generaciones ***********/
 
-const drawGenerations = (generations) =>{
+const drawGenerations = generations =>{
 
 
 }
