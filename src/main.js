@@ -1,53 +1,5 @@
 const url = 'https://raw.githubusercontent.com/sanrey254/proyecto-2-data-dashboard/master/data/laboratoria.json';
 
-const getDataMain = () =>{
-		let laboratoria = fetch(url).then(result => result.json())
-		.then(result =>{
-		const students = data.computeStudentsStats(result);
-		const campus =  data.computeCampus(result);
-		const statusGeneration = data.computeGenerationsStats(result);
-		drawGeneralStatistics(students,'General');		
-		drawCampus(campus, students);
-		drawMenu(campus);
-	})	
-}
-
-const getDataSede = (sede) =>{
-	let laboratoria = fetch(url).then(result => result.json())
-		.then(result =>{
-		const students = data.computeStudentsStats(result);
-		const statusGeneration = data.computeGenerationsStats(result);	
-		const campus =  data.computeCampus(result);	
-		drawGeneralStatistics(students, sede);
-		drawStudentsTable(students, sede);
-		drawNumberOfStudents(statusGeneration, sede);
-		drawMenu(campus);
-	})
-}
-
-const getDataGeneration = () => {
-	let laboratoria = fetch(url).then(result => result.json())
-		.then(result =>{
-		const students = data.computeStudentsStats(result);
-		drawGenerations(students);
-	})
-}
-
-const firstLetter = string => {
-    return string.charAt(0).toUpperCase() + string.slice(1);
-}
-
-const filterStudentsBySede = (students, sede) =>{
-	const filterStudents = [];
-	students.forEach(student =>{
-		if(student.campus === sede){
-			filterStudents.push(student);
-		}
-	})
-	return filterStudents;
-}
-
-
 /************ Vista Home/Inicio ***********/
 const drawMenu = (campus) =>{
 	let j = 1;
@@ -92,7 +44,7 @@ const drawGeneralStatistics = (students, sede) =>{
 	if(sede === 'General'){
 		filterStudents = students;
 	}else{
-		filterStudents = filterStudentsBySede(students, sede);
+		filterStudents = data.filterStudentsBySede(students, sede);
 	}
 	studentsNumber[0] = filterStudents.length;
 	filterStudents.forEach(student =>{
@@ -134,7 +86,7 @@ const drawNumberOfStudents = (generations, sede) =>{
 	})
 	let i = 1;
 	years.forEach(generation =>{
-		document.getElementById(`generation${i++}`).innerHTML = `${firstLetter(generation)} <br> generación`;
+		document.getElementById(`generation${i++}`).innerHTML = `${data.firstLetterToUpperCase(generation)} <br> generación`;
 	})
 
 	document.getElementById(`students-generation${y++}`).innerHTML = students[0];
@@ -143,14 +95,14 @@ const drawNumberOfStudents = (generations, sede) =>{
 }
 
 const drawStudentsTable = (students, sede) =>{
-	const filterStudents = filterStudentsBySede(students, sede);
+	const filterStudents = data.filterStudentsBySede(students, sede);
 	let result = '';
 	filterStudents.forEach((student, i) =>{
 		result += `<tr>
                       <th scope="row">${i+1}</th>
                       <td>${student.name}</td>
                       <td>${student.email}</td>
-                      <td>${firstLetter(student.generation)}</td>
+                      <td>${data.firstLetterToUpperCase(student.generation)}</td>
                       <td>${student.stats.completedPercentage} %</td>
                     </tr>`
 	})
@@ -162,7 +114,6 @@ const drawGenerations = generations =>{
 
 
 }
-
 
 const getLocation = () =>{
 	const location = window.location.href;

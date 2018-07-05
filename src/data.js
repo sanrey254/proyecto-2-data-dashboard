@@ -1,5 +1,51 @@
 window.data = {
 
+	getDataMain: () =>{
+			fetch(url).then(result => result.json())
+			.then(result =>{
+			const students = data.computeStudentsStats(result);
+			const campus =  data.computeCampus(result);
+			const statusGeneration = data.computeGenerationsStats(result);
+			drawGeneralStatistics(students,'General');		
+			drawCampus(campus, students);
+			drawMenu(campus);
+		})	
+		.catch(error =>{
+			console.log('Error');
+		})
+	},
+
+	getDataSede: sede =>{
+		fetch(url).then(result => result.json())
+			.then(result =>{
+			const students = data.computeStudentsStats(result);
+			const statusGeneration = data.computeGenerationsStats(result);	
+			const campus =  data.computeCampus(result);	
+			drawGeneralStatistics(students, sede);
+			drawStudentsTable(students, sede);
+			drawNumberOfStudents(statusGeneration, sede);
+			drawMenu(campus);
+		})
+		.catch(error =>{
+			console.log('Error');
+		})
+	},
+
+	getDataGeneration: () => {
+		fetch(url).then(result => result.json())
+			.then(result =>{
+			const students = data.computeStudentsStats(result);
+			drawGenerations(students);
+		})
+		.catch(error =>{
+			console.log('Error');
+		})
+	},
+
+	firstLetterToUpperCase: string => {
+    	return string.charAt(0).toUpperCase() + string.slice(1);
+	},
+
 	createSubtopics: subtemas => {
 		let subtopics = subtemas;
 		let propiedades = Object.values(subtopics);
@@ -121,5 +167,16 @@ window.data = {
 
 	filterStudents: (students, search) =>{
 
+	},
+
+	filterStudentsBySede: (students, sede) =>{
+		const filterStudents = [];
+		students.forEach(student =>{
+			if(student.campus === sede){
+				filterStudents.push(student);
+			}
+		})
+		return filterStudents;
 	}
+
 }
