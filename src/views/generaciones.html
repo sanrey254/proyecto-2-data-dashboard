@@ -24,7 +24,7 @@
                 <a href="dataMain.html" class="navbar-brand d-none d-sm-inline-block">
                   <div class="brand-text d-none d-lg-inline-block"><span><strong>&#60;Laboratoria&#62;</strong></span> Admin</div>
                   <div class="brand-text d-none d-sm-inline-block d-lg-none"><strong>&#60; L &#62;</strong></div></a>
-                    <a id="toggle-btn" href="#" class="menu-btn active"><span></span><span></span><span></span></a>
+                  <a id="toggle-btn" href="#" class="menu-btn active"><span></span><span></span><span></span></a>
               </div>
               <ul class="nav-menu list-unstyled d-flex flex-md-row align-items-md-center">
                 <li class="nav-item"><a href="../index.html" class="nav-link logout"> <span class="d-none d-sm-inline">Salir</span><i class="fa fa-sign-out"></i></a></li>
@@ -33,7 +33,7 @@
           </div>
         </nav>
       </header>
-      <div class="page-content d-flex align-items-stretch">
+      <div class="page-content d-flex align-items-stretch"> 
         <nav class="side-navbar">
           <div class="sidebar-header d-flex align-items-center">
             <div class="avatar"><img src="../img/avatar-5.jpg"  class="img-fluid rounded-circle"></div>
@@ -44,10 +44,10 @@
           </div>
           <span class="heading">Opciones  </span>
           <ul class="list-unstyled">
-            <li class="active"><a href="dataMain.html"><i class="icon-home"></i>Inicio </a></li>
+            <li><a href="dataMain.html"><i class="icon-home"></i>Inicio </a></li>
             <li><a href="#exampledropdownDropdown" aria-expanded="false" data-toggle="collapse"> <i class="icon-interface-windows"></i>Sedes </a>
                 <ul id="exampledropdownDropdown" class="collapse list-unstyled ">
-                  <li><a href="sedeLima.html" id="sedeM1"></a></li>
+                  <li class="active"><a href="sedeLima.html" id="sedeM1"></a></li>
                   <li><a href="sedeMexico.html" id="sedeM2"></a></li>
                   <li><a href="sedeSantiago.html" id="sedeM3"></a></li>
                 </ul>
@@ -56,66 +56,13 @@
           </ul>
         </nav>
         <div class="content-inner">
-          <!-- Page Header-->
           <header class="page-header">
             <div class="container-fluid">
-              <h2 class="no-margin-bottom">Inicio</h2>
+              <h2 class="no-margin-bottom"><p id="sede"></p><p id="generacion"></p></h2>
             </div>
           </header>
-          <!-- Seccion principal de visualización-->
-          <section class="dashboard-counts no-padding-bottom">
-            <div class="container-fluid">
-              <div class="row bg-white has-shadow">
-                <!-- Sede México-->
-                <div class="col-xl-4 col-sm-12 col-md-4">
-                  <div class="item d-flex align-items-center">
-                    <a href="sedeLima.html">
-                      <div class="title text-center">Estudiantes<br><p id="sede1"></p>
-                        <div class="progress">
-                          <div role="progressbar" style="width: 85%; height: 4px;" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100" class="progress-bar bg-blue"></div>
-                        </div>
-                      </div>
-                    </a>
-                    <div class="number"><strong id="students-sede1"></strong></div>
-                    <div class="icon bg-blue margin-left"><i class="icon-user"></i></div>
-                  </div>
-                </div>
-                <!-- Sede Santiago -->
-                <div class="col-xl-4 col-sm-12 col-md-4">
-                  <div class="item d-flex align-items-center">
-                    <a href="sedeMexico.html">
-                      <div class="title text-center">Estudiantes<br><span id="sede2"></span>
-                        <div class="progress">
-                          <div role="progressbar" style="width: 90%; height: 4px;" aria-valuenow="70" aria-valuemin="0" aria-valuemax="100" class="progress-bar bg-pinkLab"></div>
-                        </div>
-                      </div>
-                    </a>
-                    <div class="number"><strong id="students-sede2"></strong></div>
-                    <div class="icon bg-pinkLab margin-left"><i class="icon-user"></i></div>
-                  </div>
-                </div>
-                <!-- Sede Lima -->
-                <div class="col-xl-4 col-sm-12 col-md-4">
-                  <div class="item d-flex align-items-center"><a href="sedeSantiago.html">
-                      <div class="title text-center">Estudiantes<br><span id="sede3"></span>
-                        <div class="progress">
-                          <div role="progressbar" style="width: 90%; height: 4px;" aria-valuenow="40" aria-valuemin="0" aria-valuemax="100" class="progress-bar bg-greenLab"></div>
-                        </div>
-                      </div>
-                    </a>
-                    <div class="number"><strong id="students-sede3"></strong></div>
-                    <div class="icon bg-greenLab margin-left"><i class="icon-user"></i></div>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </section>
-          <!-- Sección Estadisticas Generales -->
-          <section class="dashboard-header">
-            <div class="container-fluid">
-              <div class="row" id="general-statistic"></div>
-            </div>
-          </section>
+          
+          <!-- Page Footer-->
           <footer class="main-footer">
             <div class="container-fluid">
               <div class="row">
@@ -133,9 +80,9 @@
     <script src="../vendor/bootstrap/js/bootstrap.min.js"></script>
     <script src="../js/front.js"></script>
     <script src="../data.js"></script>
-    <script src="../main.js"></script>  
+    <script src="../main.js"></script>
     <script>
-      data.getDataMain();
+      getLocation();
     </script>
   </body>
 </html>
