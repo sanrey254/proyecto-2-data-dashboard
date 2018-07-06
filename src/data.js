@@ -21,6 +21,7 @@ window.data = {
 			const students = data.computeStudentsStats(result);
 			const statusGeneration = data.computeGenerationsStats(result);	
 			const campus =  data.computeCampus(result);	
+			data.sortStudents(students, 'name', 'ASC');
 			drawGeneralStatistics(students, sede);
 			drawStudentsTable(students, sede);
 			drawNumberOfStudents(statusGeneration, sede);
@@ -175,8 +176,27 @@ window.data = {
 	},
 
 	sortStudents: (students, orderBy, orderDirection) =>{
-		
-
+		let studentsNames = [];
+		let orderStudents = [];
+		if(orderBy === 'name' && orderDirection === 'ASC'){
+			students.forEach(student =>{
+				studentsNames.push(student.name);
+			})
+			studentsNames.sort();
+			for(let i = 0; i < studentsNames.length; i++){
+				let result = data.filterStudents(students, studentsNames[i]);
+				if(result.length === 1){
+					orderStudents.push(result[0]);
+				}else{
+					result.forEach(name =>{
+						orderStudents.push(name);
+					})
+					i++;
+				}
+			}
+		}
+		console.log(orderStudents);
+		return orderStudents;
 	},
 
 	filterStudents: (students, search) =>{

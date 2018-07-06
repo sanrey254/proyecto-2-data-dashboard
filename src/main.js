@@ -122,7 +122,7 @@ const drawSearchStudent = (students) =>{
 	document.getElementById('btn-seach').addEventListener('click', (event) =>{
 		event.preventDefault();
 		const searchNameStudent = document.getElementById('name-student').value;
-		if(searchNameStudent != ''){
+		if(searchNameStudent != '' && searchNameStudent != ' '){
 
 			const studentResult = data.filterStudents(students, searchNameStudent);
 			const headerSearchCard = `<div class="card-header d-flex align-items-center">

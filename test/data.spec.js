@@ -1,5 +1,5 @@
 describe('data', () => {
- 
+
   it('debería exponer función computeStudentsStats en objeto global', () => {
     assert.isFunction(data.computeStudentsStats);
   });
@@ -18,20 +18,18 @@ describe('data', () => {
 
   describe('computeStudentsStats(laboratoria)', () => {
 
-    const { laboratoria } = fixtures;
-
+    //const {laboratoria }= fixtures;
+   
     it('debería retornar arreglo de students con propiedad campus y propiedad generation', () => {
-      const processed = data.computeStudentsStats(laboratoria); 
-
+      let processed = data.computeStudentsStats(datos);
       processed.forEach((student) => {
-
         assert.ok(student.hasOwnProperty('campus'));
         assert.ok(student.hasOwnProperty('generation'));
       });
     });
 
     it('debería retornar arreglo de students con propiedad stats', () => {
-      const processed = data.computeStudentsStats(laboratoria);
+      const processed = data.computeStudentsStats(datos);
     
       processed.forEach( (student, i) => {
         assert.ok(student.hasOwnProperty('stats'));
@@ -47,17 +45,16 @@ describe('data', () => {
     });
 
     describe('student.stats para el primer usuario en data de prueba - ver carpeta data/', () => {
-      const processed = data.computeStudentsStats(fixtures);
-
+      const processed = data.computeStudentsStats(datos);
       it('debería tener propiedad completedPercentage con valor 89', () => {       
         assert.equal(processed[0].stats.completedPercentage, 89);
       });
 
       it('debería tener propiedad completedPercentage dentro de propiedad topics con valor 80', () => {
-        assert.equal(processed[0].stats.topics['01-Introduccion-a-programacion'].completedPercentage, 80);
+        assert.equal(processed[1].stats.topics['01-Introduccion-a-programacion'].completedPercentage, 80);
       });
-      it('debería tener propiedad percentageDuration dentro de propiedad topics con valor 79', () => {
-        assert.equal(processed[0].stats.topics['01-Introduccion-a-programacion'].percentageDuration, 79)
+      it('debería tener propiedad percentageDuration dentro de propiedad topics con valor 78', () => {
+        assert.equal(processed[1].stats.topics['01-Introduccion-a-programacion'].percentageDuration, 78)
       });
 
       it(`debería tener propiedad subtopics que es un objeto con primera key "0-bienvenida-orientacion" con valor 
@@ -75,8 +72,7 @@ describe('data', () => {
   });
 
   describe('computeGenerationsStats(laboratoria)', () => {
-    const { laboratoria } = fixtures;
-    const processed = data.computeGenerationsStats(fixtures);
+    const processed = data.computeGenerationsStats(datos);
 
     it('debería retornar un arreglo de generaciones con propiedad average y count', () => {
       processed.forEach((generation) => {
@@ -86,7 +82,7 @@ describe('data', () => {
     });
     
     describe('generation para la primera generación en data de prueba - ver carpeta data/', () => {
-      const processed = data.computeGenerationsStats(fixtures);
+      const processed = data.computeGenerationsStats(datos);
 
       it('debería tener una propiedad average con valor 75', () => {
         assert.equal(processed[0].average, 75);
@@ -109,9 +105,7 @@ describe('data', () => {
 
   describe('filterStudents(users, search)', () => {
 
-    it('debería retornar nuevo arreglo solo con estudiantes con nombres que contengan string (case insensitive)', () =>{
-      
-    });
+    it('debería retornar nuevo arreglo solo con estudiantes con nombres que contengan string (case insensitive)');
 
   });
 });
