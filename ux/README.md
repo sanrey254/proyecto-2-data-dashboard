@@ -37,7 +37,7 @@ __**NUESTRA TRAINING MANAGER DE LA SEDE DE CIUDAD DE MEXICO GENERACION 6**__
 
 ###  ¿Cuáles son los datos más relevantes que quieren ver en la interfaz y por qué?
 
- - [ ]  *1 : prueba git Primero la informacion de las sedes **¿Porque?** para poder saber con cuantas sedes cuentan.*
+ - [ ]  *1 : Primero la informacion de las sedes **¿Porque?** para poder saber con cuantas sedes cuentan.*
 
 - [ ]  *2 : La generación **¿Porque?** Para saber con cuantas generaciones cuentan.*
 
