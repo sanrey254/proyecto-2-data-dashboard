@@ -120,7 +120,22 @@
                 <div class="col-lg-12">
                   <div class="card">
                     <div class="card-header d-flex align-items-center">
-                      <h3 class="h4" id='table-title'>Estudiantes</h3>
+                      <div class="col-lg-6">
+                        <h3 class="h4" id='table-title'>Estudiantes</h3>
+                      </div>
+                      <div class="col-lg-6 text-right">
+                        <div class="row">
+                          <div class="offset-6 col-lg-6">
+                            <select id="order-by" class="form-control">
+                              <option value="" disabled selected>Ordenar por</option>
+                              <option value="name-ASC">Nombre a-z</option>
+                              <option value="name-DESC">Nombre z-a</option>
+                              <option value="percentaje-ASC">Porcentaje mayor</option>
+                              <option value="percentaje-DESC">Porcentaje menor</option>
+                            </select>
+                          </div>
+                        </div>
+                      </div>
                     </div>
                     <div class="card-body">
                       <div class="table-responsive">   

@@ -156,6 +156,7 @@ window.data = {
       y = 0;
       years.forEach(students =>{
         let estudiantes = students.estudiantes;
+        suma = 0;
         estudiantes.forEach(personalInfo =>{
           suma += personalInfo.progreso.porcentajeCompletado;
         });
@@ -225,6 +226,7 @@ window.data = {
           result.forEach(percentaje =>{
             orderStudents.push(percentaje);
           });
+          i++;
         }
       }
     }
@@ -232,16 +234,18 @@ window.data = {
     if (orderBy === 'percentaje' && orderDirection === 'DESC') {
 
     }
+    console.log(orderStudents);
     return orderStudents;
   },
 
   filterStudents: (students, search) =>{
     const searchStudentData = [];
     students.forEach(student =>{
-      if (student.name.indexOf(search) !== -1) {
+      if (student.name.toLowerCase().indexOf(search.toLowerCase()) !== -1) {
         searchStudentData.push(student);
       }
     });
+    console.log(searchStudentData);
     return searchStudentData;
   },
 
