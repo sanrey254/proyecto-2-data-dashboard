@@ -128,7 +128,7 @@ table {
 *[class*="icon-"] {
   -webkit-transform: translateY(3px);
   transform: translateY(3px);
-}
+} 
 
 button,
 input {
@@ -478,7 +478,7 @@ nav.side-navbar ul li.active > a:hover {
 }
 
 nav.side-navbar ul li li.active > a {
-  background: #8e81f1;
+  background: #c59608;
 }
 
 nav.side-navbar ul li ul {
@@ -1008,7 +1008,6 @@ section.dashboard-counts div[class*='col-']:last-of-type .item {
 
 .statistic small {
   color: #aaa;
-  text-transform: uppercase;
 }
 
 .statistic .icon {
@@ -1292,6 +1291,9 @@ section.dashboard-counts div[class*='col-']:last-of-type .item {
 * ==========================================================
 */
 
+.table-striped tbody tr:nth-of-type(odd){
+  background-color: #ffc1071f;
+}
 
 /*====== Trending Articles Box ======*/
 .articles a {
@@ -1313,7 +1315,7 @@ section.dashboard-counts div[class*='col-']:last-of-type .item {
 }
 
 .articles .item:nth-of-type(even) {
-  background: #fafafa;
+  background: #ffc1071f;
 }
 
 .articles .item .image {
@@ -2669,6 +2671,12 @@ a {
 
 a:focus, a:hover {
   color: #3b25e6;
+}
+
+.tags-search{
+  padding-bottom: 3px;
+  font-size: 0.8em;
+  font-weight: 600;
 }
 
 h1,
