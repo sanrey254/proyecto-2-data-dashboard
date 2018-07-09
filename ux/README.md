@@ -73,11 +73,14 @@ __**En gran manera porque hace mas accesible obtener la información deseada.**_
 
 #### Tomando en cuenta los tableros existentes, ademas de que muchos tableros ya existentes se limitan a regiones especificas,y para poder usarlos se requiere pagar una mensualidad o anualidad.
  
- ![tablerosexistentes](src/img/tablerosexistentes.png)
+ ![tablerosexistentes](ux/img/tablerosexistentes.png)
 
 
 
-![tableroagencyanalitic](src/img/agencyanaliticinicio.png) 
+
+
+
+![tableroagencyanalitic](src/img/tableroagencyanalitic.png) 
 
 
 
