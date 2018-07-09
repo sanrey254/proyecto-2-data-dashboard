@@ -1,4 +1,4 @@
-#TABLERO DE DATOS
+# TABLERO DE DATOS
 ## DATA DASHBOARD 
 
 **Este  tablero de datos esta principalmente destinatado pra el equipo que conforma laboratoria ,ya que ellos desean un manejo eficaz y rapido de los datos obtenidos de cada alumna .Para ver su rendimiento durante el bootcamp,tambien para poder implementar mejoras en el metodo de apoyo para que las laumnas puedan tener un mejor desempeño y no se queden resagadas con temas durante el bootcamp.**
@@ -21,26 +21,28 @@ Entrar            | Despues de haber ingresado nombre y contraseña el usuario p
 **Generaciones**|Las Generaciones con las que cuenta esa Sede.
 **Total de Estudiantes**|El total de estduantes que ha tenido esa Sede.
 **Estudiantes**|Los datos completos de las estudiantes.
-**Progreso Estudiantes**|El progeso academico de las estudiantes dividido en 3 segciones :**Alto : por arriba del 90%.** **Medio: por la media.****Bajo: por debajo del 60%.**
+**Progreso Estudiantes**|El progeso academico de las estudiantes dividido en 3 segciones :**Alto : por arriba del 90%.** **Medio: por la media.** **Bajo: por debajo del 60%.**
 **Sede Mexico**|Al s eleccionar la Sede Mexico, mostrara con cuantas generaciones cuenta esa Sede
 **Generaciones**|Las Generaciones con las que cuenta esa Sede.
 **Total de Estudiantes**|El total de estduantes que ha tenido esa Sede.
 **Estudiantes**|Los tados completos de las estudiantes.
-**Progreso Estudiantes**|El progeso academico de las estudiantes dividido en 3 segciones :**Alto : por arriba del 90%.** **Medio: por la media.****Bajo: por debajo del 60%.**
+**Progreso Estudiantes**|El progeso academico de las estudiantes dividido en 3 segciones :**Alto : por arriba del 90%.** **Medio: por la media.** **Bajo: por debajo del 60%.**
 **Sede Santiago**|Al seleccionar la Sede Santiago ,mostrara con cuantas generaciones cuenta esa Sede
 **Generaciones**|Las Generaciones con las que cuenta esa Sede.
 **Total de Estudiantes**|El total de estduantes que ha tenido esa Sede.
 **Estudiantes**|Los tados completos de las estudiantes.
-**Progreso Estudiantes**|El progeso academico de las estudiantes dividido en 3 segciones :**Alto : por arriba del 90%.** **Medio: por la media.****Bajo: por debajo del 60%.**
+**Progreso Estudiantes**|El progeso academico de las estudiantes dividido en 3 segciones :**Alto : por arriba del 90%.** **Medio: por la media.** **Bajo: por debajo del 60%.**
 **Consultas**| Podra hacer una consulta directa : **Solo ingresando el nombre completo de la estudiante.**
 
 #### Este es el diseño final de la pagina.
 
- ![terceralcance](src/img/tercercalance.png)
+#### Diseño de la pagina.
+![terceralcance](src/img/tercercalance.png)
 
-![terceralcancea](src/img/tercercalance.png)
-![terceralcanceb](src/img/tercercalance.png)
-![terceralcancec](src/img/tercercalance.png)
+![terceralcancea](src/img/tercercalancea.png)
+![terceralcanceb](src/img/tercercalanceb.png)
+![terceralcancec](src/img/tercercalancec.png)
+![terceralcanced](src/img/tercercalanced.png)
 
 
 

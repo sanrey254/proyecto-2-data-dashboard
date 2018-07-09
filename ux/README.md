@@ -77,11 +77,11 @@ __**En gran manera porque hace mas accesible obtener la información deseada.**_
 
 
 
-![tableroagencyanalitic](src/img/tableroagencyanalitic.png)
+![tableroagencyanalitic](src/img/agencyanaliticinicio.png) 
 
 
 
- ![agencyanaliticinicio](src/img/agencyanaliticinicio.png)
+ ![agencyanaliticinicio](src/img/agencyanaliticinicio.png) 
 
 
 
@@ -93,19 +93,19 @@ __**En gran manera porque hace mas accesible obtener la información deseada.**_
  #### El cual esta limitado su uso para dos regiones ,las cuales son ; **Irlanda y Virginia.**
  #### Ademas de que tiene un costo
 
- ![clicdata](src/img/clicdata.png)
-![tablerozohohreports](src/img/tablerozohoreports.png)
-![zohoreportscosto](src/img/zohoreportscosto.png)
+ ![clicdata](src/img/clicdata.png) 
+![tablerozohohreports](src/img/tablerozohoreports.png) 
+![zohoreportscosto](src/img/zohoreportscosto.png) 
 
 
 ### Realizamos una encuestra y comparamos los resultados obtenidos.
 
 
- ![cuestionariopreguntas](src/img/cuestionariopreguntas.png)
+ ![cuestionariopreguntas](src/img/cuestionariopreguntas.png) 
 
  
 
- ![cuestionarioresultados](src/img/cuestionarioresultados.png)
+ ![cuestionarioresultados](src/img/cuestionarioresultados.png) 
 
 
 
