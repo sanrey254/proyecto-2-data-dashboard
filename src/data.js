@@ -1,5 +1,6 @@
 window.data = {
 
+
 	getDataMain: () =>{
 	  fetch(url).then(result => result.json())
 		.then(result =>{
@@ -276,3 +277,4 @@ window.data = {
 	}
   
   };
+
