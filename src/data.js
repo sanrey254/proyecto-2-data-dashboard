@@ -1,8 +1,9 @@
-window.data = {
+window.data = {//objeto global
 
-	getDataMain: () =>{
-			fetch(url).then(result => result.json())
-			.then(result =>{
+	getDataMain: () =>{//funcion 
+			fetch(url).then(result => result.json())//se asigna el valor de json como parametro
+			//con fetch se llama  a la informacion de json 
+			.then(result =>{//se crea una promesa 
 			const students = data.computeStudentsStats(result);
 			const campus =  data.computeCampus(result);
 			const statusGeneration = data.computeGenerationsStats(result);

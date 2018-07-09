@@ -1,61 +1,148 @@
-# **Data Dashboard**
+# TABLERO DE DATOS
 
-## **Proceso de UX**
+#### ¿Quiénes son los principales usuarios de producto?.
 
-Nuestro primer acercamiento lo haremos a través del proceso de diseño, donde pasamos por diferentes etapas como:
+__**Todos los que conforman laboratoria e influyen en el desarrollo intelectual de las integrantes de Laboratoria,principalmente se tenia previsto este programa para uso exclusivo de los Training Manager de todas las sedes que conforman  laboratoria,aunque ahora se decidio ampliarse para beneficio de los coaches y tambien para beneficio de los creadores de Laboratoria.**__
 
-### **1. Descubrimiento e investigación**
-(En esta fase es donde vamos a tener ese proceso de investigación y acercamiento con el usuario, es donde vamos a obtener el conocimiento para poder saber a quién vamos a llegar, pero de manera más profunda. Es tener la empatía y el acercamiento necesario para conocerlo.
+__**Con la finalidad de poder ver el progreso y las areas de oportunidad de las estudiantes de Laboratoria y poder abordar de mejor manera los conflictos que puedan presentarse en algun momento.**__
 
-También vamos a tener en cuenta al negocio, sus objetivos y a los stakeholders(involucrados)).
+###  ¿Cuáles son los objetivos de estos usuarios en relación con el producto?
 
-__Usuarixs:__  (Toda la información que sepas de ellxs, ya sea porque las has podido observar o porque obtuviste datos directamente de ellas)
+ 
+**Ambos comparten objetivos ,buscan poder ver el desarrolo de las alumnas y atender de manera efectiva las dudas o conflictos que puedan presentarse en sentido academico.**
 
-__Necesidades de las usuarias:__
+#### ENTREVISTA TRAINING MANAGER
+
+__**NUESTRA TRAINING MANAGER DE LA SEDE DE CIUDAD DE MEXICO GENERACION 6**__
+
+**Actualmente no hay , **no existe una manera fácil de obtener dicha informacion** , todo se hace atravez de excel y es muy tedioso el proceso.**
 
 
-__Objetivos de las usuarias:__ (Lo que quieren o esperan lograr)
+**No importan las gráficas,prefiere que el programa sea fácil de usar**
+
+**Seria una excelente idea el usar usuario y contraseña ya que así solo estaría disponible para usuarios concretos pertenecientes a  Laboratoria.**
+
+ **Es prioridad que pueda usarse en diferentes plataformas,ya que seria muy útil poder acceder a el desde el móvil**
+
+**Es importante contar con el tablero de datos para poder tomar decisión para un mejor desarrollo de las alumnas.**
 
 
-__Pain points:__ (En sus actividades diarias qué es lo que más les molesta u obstaculiza en el proceso de  realizar sus actividades/objetivos)
 
-__Sentimientos:__(Sentimientos que les surgen dentro del proceso de sus actividades. Identificar cuáles predominan)
+##### Cuestionario en linea (https://jazmin64.typeform.com/to/kl4Ftk)
 
-__Técnicas usadas en esta fase:__ (Sabemos que en este punto, tal vez, sólo has ocupado encuestas, no te olvides de documentar este proceso de recolección de datos)
+##### Prototipo para Android (https://marvelapp.com/31i025f/screen/45103195)
 
-__5. Objetivos del negocio:__ (Enlistarlo(s))
 
-__6. Motivaciones del negocio para el data dashboard:__(Enlistarlo(s))
 
-### **2. Síntesis y definición**
-(Dada la fase anterior de investigación, ahora vamos a tomar todos los datos más importantes y transformarlos en información valiosa para comenzar a orientarse a la solución. También vamos a entender lo que la empresa quiere de ese producto y comenzar a entender ambas visiones con el fin de encontrar un punto armónico)
 
-__1. Cuáles crees que son los datos más importantes a tener en cuenta para el Data Dashboard:__
+###  ¿Cuáles son los datos más relevantes que quieren ver en la interfaz y por qué?
 
-   - Sobre las estudiantes:
+ - [ ]  *1 : Primero la informacion de las sedes **¿Porque?** para poder saber con cuantas sedes cuentan.*
+
+- [ ]  *2 : La generación **¿Porque?** Para saber con cuantas generaciones cuentan.*
+
+- [ ]  *3 : Promedio por generacion. **¿Porque?** Para saber que calificaion tuvo cada generacion y por sede.*
+
+
+- [ ] *4 : La informacion de las egresadas **¿Porque?** Para  saber cuantas estudiantes lograron concluir el bootcamp.*
+ 
+- [ ]  *5 : Temas vistos y desempeño de cada alumna egresada **¿Porque?** para medir el desempeñode cada alumna.* 
+
+- [ ] *6 : Informacion de las estudiantes **¿Porque?** Le permite saber con cuantas estudiantes cuenta en la generacion actual.*
+
+- [ ] *7 : Temas abarcados y desempeño por tema **¿Porque?** Le permite saber que temas conocen las estudiantes y que temas abordar en futuras clases.*
+
+
+
+
+## ¿ Cómo los descubriste?
+
+
+__**Preguntando que parametros toman para futuras clases que se les daran a las alumnas,ademas de que es como miden su evolucion y les permite a ellos implementar mejoras al programa educativo.**__
+
+
+#### Cuándo revisan normalmente estos datos los usuarios.
+
+__**Lo hacen constantemente ,para saber que mejoras implementar.**__
+
+#### Cómo crees que el producto les está resolviendo sus problemas.
+
+__**En gran manera porque hace mas accesible obtener la información deseada.**__
+
+## Cómo fue tu proceso de diseño.
+
+#### Tomando en cuenta los tableros existentes, ademas de que muchos tableros ya existentes se limitan a regiones especificas,y para poder usarlos se requiere pagar una mensualidad o anualidad.
+ 
+ ![tablerosexistentes](src/img/tablerosexistentes.png)
+
+
+
+![tableroagencyanalitic](src/img/agencyanaliticinicio.png) 
+
+
+
+ ![agencyanaliticinicio](src/img/agencyanaliticinicio.png) 
+
+
+
+
+
+
+ ### En esta imagen tomamos en cuenta el Tablero de Datos llamado 
+ ### "CLIC DATA"
+ #### El cual esta limitado su uso para dos regiones ,las cuales son ; **Irlanda y Virginia.**
+ #### Ademas de que tiene un costo
+
+ ![clicdata](src/img/clicdata.png) 
+![tablerozohohreports](src/img/tablerozohoreports.png) 
+![zohoreportscosto](src/img/zohoreportscosto.png) 
+
+
+### Realizamos una encuestra y comparamos los resultados obtenidos.
+
+
+ ![cuestionariopreguntas](src/img/cuestionariopreguntas.png) 
+
  
 
-__2. Lo que los usuarios esperan obtener:__
+ ![cuestionarioresultados](src/img/cuestionarioresultados.png) 
 
 
-__3. Insights:__
 
-__4. Data proporcionada:__ 
+#### En esta imagen se puede observar nuestro sketch.
 
-     -_Data relacionada a los cursos:_
+![sketch1](src/img/sketch1.png)
 
-__5. Insights del negocio:__
 
-### **3. Ideación**
-(Acá se comienza a pensar esa solución tomando en cuenta la información recopilada y procesada)
+![sketch2](src/img/sketch2.jpg)
 
-### **4. Prototipado**
-(Esta es la fase creativa, donde se comienza a construir el Data dashboard con la información obtenida de las fases anteriores. Se reafirma crear la experiencia de usuario, donde la solución resuelve necesidades y facilita la vida)
 
-Sketch: (Adjuntar liga)
+![sketch3](src/img/sketch3.jpg)
 
-Prototipo en figma: (Adjuntar liga)
 
-### **5. User testing**
-(Si deseas validar tu propuesta, acércate a tu usuario y que te de feedback con el fin de mejorar tu producto en beneficio del negocio y de tu usuarix).
-****
+#### El Proceso para Diseñar el programa fue basandonos en los resultados obtenidos por nuestros usuarios,mediante entrevistas y encuestas para poder reforzar o modificar nuestro prototipo.
+
+ ![primeralcance](src/img/primeralcance.png)
+
+ ![diagrama](src/img/diagramadeflujo.png)
+
+
+
+#### Asi luce el diseño probado en plataforma mobile.
+
+ ![testeoprueba1](src/img/testeoprueba1.png)
+
+
+![testeoprueba2](src/img/testeoprueba2.png)
+
+
+
+
+Prototipo para Pc (https://marvelapp.com/3jdjh1j/screen/45140790)
+
+####  Asi luce el diseño probado en plataforma web.
+
+
+  ![segundoalcance](src/img/segundoalcance.png)
+
+ ![segujndoalcanceb](src/img/segundoalcanceb.png)
