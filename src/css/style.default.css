@@ -104,6 +104,11 @@ table {
   color: #ffc107;
 }
 
+.button-selected{
+  background-color: #fff7e1;
+  border: none;
+}
+
 .card-close .dropdown-menu a {
   color: #999 !important;
 }
