@@ -73,18 +73,18 @@ __**En gran manera porque hace mas accesible obtener la información deseada.**_
 
 #### Tomando en cuenta los tableros existentes, ademas de que muchos tableros ya existentes se limitan a regiones especificas,y para poder usarlos se requiere pagar una mensualidad o anualidad.
  
- ![tablerosexistentes](ux/img/tablerosexistentes.png)
+ ![tablerosexistentes](/ux/img/tablerosexistentes.png)
 
 
 
 
 
 
-![tableroagencyanalitic](src/img/tableroagencyanalitic.png) 
+![tableroagencyanalitic](/ux/img/tableroagencyanalitic.png)
 
 
 
- ![agencyanaliticinicio](src/img/agencyanaliticinicio.png) 
+ ![agencyanaliticinicio](/ux/img/agencyanaliticinicio.png) 
 
 
 
@@ -96,47 +96,47 @@ __**En gran manera porque hace mas accesible obtener la información deseada.**_
  #### El cual esta limitado su uso para dos regiones ,las cuales son ; **Irlanda y Virginia.**
  #### Ademas de que tiene un costo
 
- ![clicdata](src/img/clicdata.png) 
-![tablerozohohreports](src/img/tablerozohoreports.png) 
-![zohoreportscosto](src/img/zohoreportscosto.png) 
+ ![clicdata](/src/img/clicdata.png) 
+![tablerozohohreports](/src/img/tablerozohoreports.png) 
+![zohoreportscosto](/src/img/zohoreportscosto.png) 
 
 
 ### Realizamos una encuestra y comparamos los resultados obtenidos.
 
-
- ![cuestionariopreguntas](src/img/cuestionariopreguntas.png) 
+#### __**Cuestionario .**__
+ ![cuestionariopreguntas](/src/img/cuestionariopreguntas.png) 
 
  
 
- ![cuestionarioresultados](src/img/cuestionarioresultados.png) 
+ ![cuestionarioresultados](/src/img/cuestionarioresultados.png) 
 
 
 
 #### En esta imagen se puede observar nuestro sketch.
 
-![sketch1](src/img/sketch1.png)
+![sketch1](/src/img/sketch1.png)
 
 
-![sketch2](src/img/sketch2.jpg)
+![sketch2](/src/img/sketch2.jpg)
 
 
-![sketch3](src/img/sketch3.jpg)
+![sketch3](/src/img/sketch3.jpg)
 
 
 #### El Proceso para Diseñar el programa fue basandonos en los resultados obtenidos por nuestros usuarios,mediante entrevistas y encuestas para poder reforzar o modificar nuestro prototipo.
 
- ![primeralcance](src/img/primeralcance.png)
+ ![primeralcance](/src/img/primeralcance.png)
 
- ![diagrama](src/img/diagramadeflujo.png)
+ ![diagrama](/src/img/diagramadeflujo.png)
 
 
 
 #### Asi luce el diseño probado en plataforma mobile.
 
- ![testeoprueba1](src/img/testeoprueba1.png)
+ ![testeoprueba1](/src/img/testeoprueba1.png)
 
 
-![testeoprueba2](src/img/testeoprueba2.png)
+![testeoprueba2](/src/img/testeoprueba2.png)
 
 
 
@@ -146,6 +146,6 @@ Prototipo para Pc (https://marvelapp.com/3jdjh1j/screen/45140790)
 ####  Asi luce el diseño probado en plataforma web.
 
 
-  ![segundoalcance](src/img/segundoalcance.png)
+  ![segundoalcance](/src/img/segundoalcance.png)
 
- ![segujndoalcanceb](src/img/segundoalcanceb.png)
+ ![segujndoalcanceb](/src/img/segundoalcanceb.png)

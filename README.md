@@ -19,30 +19,44 @@ Entrar            | Despues de haber ingresado nombre y contraseña el usuario p
 **Sede**     | Apareceran las Sedes con las que cuenta **Laboratoria.**
 **Sede LIma**|Al seleccionar la Sede Lima ,mostrara con cuantas generaciones cuenta esa Sede.
 **Generaciones**|Las Generaciones con las que cuenta esa Sede.
-**Total de Estudiantes**|El total de estduantes que ha tenido esa Sede.
+**Total de Estudiantes**|El total de estudiantes que ha tenido esa Sede.
 **Estudiantes**|Los datos completos de las estudiantes.
 **Progreso Estudiantes**|El progeso academico de las estudiantes dividido en 3 segciones :**Alto : por arriba del 90%.** **Medio: por la media.** **Bajo: por debajo del 60%.**
 **Sede Mexico**|Al s eleccionar la Sede Mexico, mostrara con cuantas generaciones cuenta esa Sede
 **Generaciones**|Las Generaciones con las que cuenta esa Sede.
-**Total de Estudiantes**|El total de estduantes que ha tenido esa Sede.
+**Total de Estudiantes**|El total de estudiantes que ha tenido esa Sede.
 **Estudiantes**|Los tados completos de las estudiantes.
 **Progreso Estudiantes**|El progeso academico de las estudiantes dividido en 3 segciones :**Alto : por arriba del 90%.** **Medio: por la media.** **Bajo: por debajo del 60%.**
 **Sede Santiago**|Al seleccionar la Sede Santiago ,mostrara con cuantas generaciones cuenta esa Sede
 **Generaciones**|Las Generaciones con las que cuenta esa Sede.
-**Total de Estudiantes**|El total de estduantes que ha tenido esa Sede.
+**Total de Estudiantes**|El total de estudiantes que ha tenido esa Sede.
 **Estudiantes**|Los tados completos de las estudiantes.
 **Progreso Estudiantes**|El progeso academico de las estudiantes dividido en 3 segciones :**Alto : por arriba del 90%.** **Medio: por la media.** **Bajo: por debajo del 60%.**
 **Consultas**| Podra hacer una consulta directa : **Solo ingresando el nombre completo de la estudiante.**
 
 #### Este es el diseño final de la pagina.
 
-#### Diseño de la pagina.
-![terceralcance](src/img/tercercalance.png)
 
-![terceralcancea](src/img/tercercalancea.png)
-![terceralcanceb](src/img/tercercalanceb.png)
-![terceralcancec](src/img/tercercalancec.png)
-![terceralcanced](src/img/tercercalanced.png)
+
+
+
+
+![terceralcance](src/img/terceralcance.png)
+
+![terceralcancea](src/img/terceralcanceb.png)
+
+
+
+![terceralcanceb](src/img/terceralcancec.png)
+
+
+
+![terceralcancec](src/img/terceralcanced.png)
+
+
+
+
+
 
 
 
