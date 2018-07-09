@@ -15,7 +15,7 @@ window.data = {
 		  console.log('Error');
 		});
 	},
-  
+
 	getDataSede: sede =>{
 	  fetch(url).then(result => result.json())
 		.then(result =>{
@@ -220,26 +220,29 @@ window.data = {
 		studentsPercentaje.sort();
 		for (let i = 0; i < studentsPercentaje.length; i++) {
 		  result = data.filterStudentsByPercentaje(students, studentsPercentaje[i]);
-		  if (result.length === 1) {
-			orderStudents.push(result[0]);
-		  } else {
-			result.forEach(percentaje =>{
-			  orderStudents.push(percentaje);
-			});
-		  }
-		}
+  		  if (result.length === 1) {
+  			orderStudents.push(result[0]);
+  		  } else {
+  			result.forEach(percentaje =>{
+  			  orderStudents.push(percentaje);
+  			});
+         	i += result.length;
+  		  }
+  		}
+
 	  }
   
 	  if (orderBy === 'percentaje' && orderDirection === 'DESC') {
   
 	  }
+    console.log(orderStudents);
 	  return orderStudents;
 	},
   
 	filterStudents: (students, search) =>{
 	  const searchStudentData = [];
 	  students.forEach(student =>{
-		if (student.name.indexOf(search) !== -1) {
+		if (student.name.toLowerCase().indexOf(search.toLowerCase()) !== -1) {
 		  searchStudentData.push(student);
 		}
 	  });
@@ -277,5 +280,5 @@ window.data = {
 	}
   
   };
->>>>>>> origin/master
+
 

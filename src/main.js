@@ -140,7 +140,7 @@ const drawGeneration = (students, campus, generation) =>{
 };
 
 const getGenerationAndCampus = students =>{
-  document.getElementById('btn-generation1').addEventListener('click', event =>{
+    document.getElementById('btn-generation1').addEventListener('click', event =>{
     event.preventDefault();
     document.getElementById('btn-generation2').className = 'no-button-sedes';
     document.getElementById('btn-generation3').className = 'no-button-sedes';
@@ -204,4 +204,8 @@ const drawSearchStudent = students =>{
     }
   });
 };
+
+const drawTable = (object) =>{
+
+}
 
