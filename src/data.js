@@ -1,8 +1,9 @@
-window.data = {
+window.data = {//objeto global
 
-	getDataMain: () =>{
-			fetch(url).then(result => result.json())
-			.then(result =>{
+	getDataMain: () =>{//funcion 
+			fetch(url).then(result => result.json())//se asigna el valor de json como parametro
+			//con fetch se llama  a la informacion de json 
+			.then(result =>{//se crea una promesa 
 			const students = data.computeStudentsStats(result);
 			const campus =  data.computeCampus(result);
 			const statusGeneration = data.computeGenerationsStats(result);
@@ -21,15 +22,15 @@ window.data = {
 			const students = data.computeStudentsStats(result);
 			const statusGeneration = data.computeGenerationsStats(result);	
 			const campus =  data.computeCampus(result);	
-			data.sortStudents(students, 'name', 'ASC');
+			data.sortStudents(students, 'percentaje', 'ASC');
 			drawGeneralStatistics(students, sede);
 			drawStudentsTable(students, sede);
 			drawNumberOfStudents(statusGeneration, sede);
 			drawMenu(campus);
 		})
-		.catch(error =>{
+		/*.catch(error =>{
 			console.log('Error');
-		})
+		})*/
 	},
 
 	getDataGeneration: () => {
@@ -178,6 +179,7 @@ window.data = {
 	sortStudents: (students, orderBy, orderDirection) =>{
 		let studentsNames = [];
 		let orderStudents = [];
+		let studentsPercentaje = [];
 		if(orderBy === 'name' && orderDirection === 'ASC'){
 			students.forEach(student =>{
 				studentsNames.push(student.name);
@@ -194,6 +196,48 @@ window.data = {
 					i++;
 				}
 			}
+		}
+		if(orderBy === 'name' && orderDirection === 'DESC'){
+			students.forEach(student =>{
+				studentsNames.push(student.name);
+			})
+			studentsNames.sort();
+			studentsNames.reverse();
+			for(let i = 0; i < studentsNames.length; i++){
+				let result = data.filterStudents(students, studentsNames[i]);
+				if(result.length === 1){
+					orderStudents.push(result[0]);
+				}else{
+					result.forEach(name =>{
+						orderStudents.push(name);
+					})
+					i++;
+				}
+			}
+		}
+
+		if(orderBy === 'percentaje' && orderDirection === 'ASC'){
+			students.forEach(student =>{
+				studentsPercentaje.push(student.stats.completedPercentage);
+			})
+			studentsPercentaje.sort();
+			for(let i = 0; i < studentsPercentaje.length; i++){
+				result = data.filterStudentsByPercentaje(students, studentsPercentaje[i]);
+				console.log(result);
+				if(result.length === 1){
+					orderStudents.push(result[0]);
+				}else{
+					//console.log(result.length);
+					result.forEach(percentaje =>{
+						//console.log(name);
+						orderStudents.push(percentaje);
+					})
+				}
+			}
+		}
+
+		if(orderBy === 'percentaje' && orderDirection === 'DESC'){
+
 		}
 		console.log(orderStudents);
 		return orderStudents;
@@ -217,6 +261,16 @@ window.data = {
 			}
 		})
 		return filterStudents;
+	},
+
+	filterStudentsByPercentaje: (students, percentaje) =>{
+		const searchStudentPercentaje = [];
+		students.forEach(student =>{
+			if(student.stats.completedPercentage === percentaje){
+				searchStudentPercentaje.push(student);
+			}
+		})
+		return searchStudentPercentaje;
 	}
 
 }
