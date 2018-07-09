@@ -25,6 +25,7 @@ window.data = {
 			drawGeneralStatistics(students, sede);
 			drawStudentsTable(students, sede);
 			drawNumberOfStudents(statusGeneration, sede);
+			getGenerationAndCampus(students);
 			drawMenu(campus);
 		})
 		/*.catch(error =>{
@@ -32,7 +33,7 @@ window.data = {
 		})*/
 	},
 
-	getDataGeneration: () => {
+	/*getDataGeneration: () => {
 		fetch(url).then(result => result.json())
 			.then(result =>{
 			const students = data.computeStudentsStats(result);
@@ -42,7 +43,7 @@ window.data = {
 		.catch(error =>{
 			console.log('Error');
 		})
-	},
+	},*/
 
 	getDataSearch: () =>{
 		fetch(url).then(result => result.json())
@@ -222,13 +223,10 @@ window.data = {
 			studentsPercentaje.sort();
 			for(let i = 0; i < studentsPercentaje.length; i++){
 				result = data.filterStudentsByPercentaje(students, studentsPercentaje[i]);
-				console.log(result);
 				if(result.length === 1){
 					orderStudents.push(result[0]);
 				}else{
-					//console.log(result.length);
 					result.forEach(percentaje =>{
-						//console.log(name);
 						orderStudents.push(percentaje);
 					})
 				}
@@ -238,7 +236,6 @@ window.data = {
 		if(orderBy === 'percentaje' && orderDirection === 'DESC'){
 
 		}
-		console.log(orderStudents);
 		return orderStudents;
 	},
 
@@ -263,13 +260,23 @@ window.data = {
 	},
 
 	filterStudentsByPercentaje: (students, percentaje) =>{
-		const searchStudentPercentaje = [];
+		const searchStudentPercentage = [];
 		students.forEach(student =>{
 			if(student.stats.completedPercentage === percentaje){
-				searchStudentPercentaje.push(student);
+				searchStudentPercentage.push(student);
 			}
 		})
-		return searchStudentPercentaje;
+		return searchStudentPercentage;
+	},
+
+	filterStudentsByGeneration: (students, generation) =>{
+		const searchStudentsGeneration = [];
+		students.forEach(student =>{
+			if(student.generation === generation){
+				searchStudentsGeneration.push(student);
+			}
+		})
+		return searchStudentsGeneration;
 	}
 
 }

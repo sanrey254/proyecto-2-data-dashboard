@@ -108,17 +108,69 @@ const drawStudentsTable = (students, sede) =>{
 	})
 	document.getElementById('table-students-body').innerHTML = result;
 }
+
 /************ Vista generaciones ***********/
-const getLocation = () =>{
-	const location = window.location.href;
-	const position = location.indexOf('?');
-	const generation = location.slice(position+1, location.length);
-	//console.log(generation);
+
+const drawGeneration = (students, campus, generation) =>{
+	let studentGeneration = '';
+		if(generation === 'generation1'){
+			studentGeneration = 'cuarta';
+		}
+		if(generation === 'generation2'){
+			studentGeneration = 'quinta';
+		}
+		if(generation === 'generation3'){
+			studentGeneration = 'tercera';
+		}
+		const studentsOfCampus = data.filterStudentsBySede(students, campus);
+		const studentsOfGeneration = data.filterStudentsByGeneration(studentsOfCampus, studentGeneration);
+		let result  = '';
+		document.getElementById('table-students-body').innerHTML = result;
+		studentsOfGeneration.forEach((student, i) =>{
+			result += `<tr>
+	                      <th scope="row">${i+1}</th>
+	                      <td>${student.name}</td>
+	                      <td>${student.email}</td>
+	                      <td>${data.firstLetterToUpperCase(student.generation)}</td>
+	                      <td>${student.stats.completedPercentage} %</td>
+	                    </tr>`;
+		})
+		document.getElementById('table-students-body').innerHTML = result;
+		document.getElementById('table-title').innerHTML = `<a href="sede${campus}.html">Estudiantes ${campus}</a>  &#62; &#62; ${data.firstLetterToUpperCase(studentGeneration)} generación`;
+
 }
 
+const getGenerationAndCampus = students =>{
+	document.getElementById('btn-generation1').addEventListener('click', event =>{
+		event.preventDefault();
+		const divCampus = document.getElementsByClassName('campus-name');
+		const campus = divCampus[0].getAttribute('id');
+		const divGeneration = document.getElementsByClassName('generation-number');
+		const generation = divGeneration[0].getAttribute('id');
+		drawGeneration(students,campus, generation);
+	})
+
+	document.getElementById('btn-generation2').addEventListener('click', event =>{
+		event.preventDefault();
+		const divCampus = document.getElementsByClassName('campus-name');
+		const campus = divCampus[1].getAttribute('id');
+		const divGeneration = document.getElementsByClassName('generation-number');
+		const generation = divGeneration[1].getAttribute('id');
+		drawGeneration(students, campus, generation);
+	})
+
+	document.getElementById('btn-generation3').addEventListener('click', event =>{
+		event.preventDefault();
+		const divCampus = document.getElementsByClassName('campus-name');
+		const campus = divCampus[2].getAttribute('id');
+		const divGeneration = document.getElementsByClassName('generation-number');
+		const generation = divGeneration[2].getAttribute('id');
+		drawGeneration(students, campus, generation);
+	})
+}
 
 /************ Vista Consultas ***********/
-const drawSearchStudent = (students) =>{
+const drawSearchStudent = students =>{
 	document.getElementById('btn-seach').addEventListener('click', (event) =>{
 		event.preventDefault();
 		const searchNameStudent = document.getElementById('name-student').value;
