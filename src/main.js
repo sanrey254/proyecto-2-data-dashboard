@@ -100,7 +100,7 @@ const drawStudentsTable = (students, sede) =>{
 	filterStudents.forEach((student, i) =>{
 		result += `<tr>
                       <th scope="row">${i+1}</th>
-                      <td>${student.name}</td>
+                      <td><button class="no-button-sedes student-button">${student.name}</button></td>
                       <td>${student.email}</td>
                       <td>${data.firstLetterToUpperCase(student.generation)}</td>
                       <td>${student.stats.completedPercentage} %</td>
@@ -129,7 +129,7 @@ const drawGeneration = (students, campus, generation) =>{
 		studentsOfGeneration.forEach((student, i) =>{
 			result += `<tr>
 	                      <th scope="row">${i+1}</th>
-	                      <td>${student.name}</td>
+	                      <td><button class="no-button-sedes student-button">${student.name}</button></td>
 	                      <td>${student.email}</td>
 	                      <td>${data.firstLetterToUpperCase(student.generation)}</td>
 	                      <td>${student.stats.completedPercentage} %</td>
@@ -188,7 +188,7 @@ const drawSearchStudent = students =>{
 				studentResult.forEach(result =>{
 				bodySearchCard += `<div class="item d-flex align-items-center">
 					                  <div class="text">
-					                    <p><span class='tags-search'>Nombre:</span> ${result.name}</p><p><span class='tags-search'>Sede:</span> ${result.campus} - ${data.firstLetterToUpperCase(result.generation)} generación </p><p><span class='tags-search'>Correo:</span> ${result.email}</p><p><span class='tags-search'>Progreso:</span> ${result.stats.completedPercentage}% completitud</p>
+					                    <p><span class='tags-search'>Nombre:</span><button class="no-button-sedes student-button">${result.name}</button></p><p><span class='tags-search'>Sede:</span> ${result.campus} - ${data.firstLetterToUpperCase(result.generation)} generación </p><p><span class='tags-search'>Correo:</span> ${result.email}</p><p><span class='tags-search'>Progreso:</span> ${result.stats.completedPercentage}% completitud</p>
 					                  </div>
 					               </div>`;
 				})

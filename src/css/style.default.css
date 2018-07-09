@@ -97,6 +97,11 @@ table {
 .no-button-sedes{
   border: none;
   background-color: inherit;
+  color: #666;
+}
+
+.no-button-sedes:hover{
+  color: #ffc107;
 }
 
 .card-close .dropdown-menu a {
@@ -1515,21 +1520,21 @@ section.charts div[class*="col-"] {
 .form-control::-moz-placeholder {
   font-size: 0.9em;
   font-weight: 300;
-  font-family: "Poppins", sans-serif;
+  font-family: 'Open Sans', sans-serif;
   color: #aaa;
 }
 
 .form-control::-webkit-input-placeholder {
   font-size: 0.9em;
   font-weight: 300;
-  font-family: "Poppins", sans-serif;
+  font-family: 'Open Sans', sans-serif;
   color: #aaa;
 }
 
 .form-control:-ms-input-placeholder {
   font-size: 0.9em;
   font-weight: 300;
-  font-family: "Poppins", sans-serif;
+  font-family: 'Open Sans', sans-serif;
   color: #aaa;
 }
 
@@ -2665,7 +2670,7 @@ STYLE SWITCHER FOR DEMO
  * 3. TYPE  
  */
 body {
-  font-family: "Poppins", sans-serif;
+  font-family: 'Open Sans', sans-serif;
   font-size: 1rem;
   font-weight: 400;
   line-height: 1.5;
@@ -2687,6 +2692,9 @@ a:focus, a:hover {
   font-size: 0.8em;
   font-weight: 600;
 }
+.font-titles{
+  font-family: 'Bitter', serif;
+}
 
 h1,
 h2,
@@ -2700,6 +2708,7 @@ h6,
 .h4,
 .h5,
 .h6 {
+  font-family: 'Bitter', serif !important;
   margin-bottom: 0.5rem;
   font-family: inherit;
   font-weight: 700;
