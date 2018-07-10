@@ -1,117 +1,116 @@
 window.data = {
-
-
-	getDataMain: () =>{
+  getDataMain: () =>{
 	  fetch(url).then(result => result.json())
-		.then(result =>{
+      .then(result =>{
 		  const students = data.computeStudentsStats(result);
 		  const campus = data.computeCampus(result);
 		  const statusGeneration = data.computeGenerationsStats(result);
 		  drawGeneralStatistics(students, 'General');		
 		  drawCampus(campus, students);
 		  drawMenu(campus);
-		})	
-		.catch(error =>{
+      });	
+    /* .catch(error =>{
 		  console.log('Error');
-		});
-	},
+		});*/
+  },
 
-	getDataSede: sede =>{
+  getDataSede: sede =>{
 	  fetch(url).then(result => result.json())
-		.then(result =>{
+      .then(result =>{
 		  const students = data.computeStudentsStats(result);
 		  const statusGeneration = data.computeGenerationsStats(result);	
 		  const campus = data.computeCampus(result);	
-		  data.sortStudents(students, 'percentaje', 'ASC');
+		  data.sortStudents(students, 'percentaje', 'DESC');
 		  drawGeneralStatistics(students, sede);
 		  drawStudentsTable(students, sede);
 		  drawNumberOfStudents(statusGeneration, sede);
 		  getGenerationAndCampus(students);
 		  drawMenu(campus);
-		})
-		.catch(error =>{
+		  orderTable(students);
+      });
+    /* .catch(error =>{
 		  console.log('Error');
-		});
-	},
+		});*/
+  },
 	
-	getDataSearch: () =>{
+  getDataSearch: () =>{
 	  fetch(url).then(result => result.json())
-		.then(result =>{
+      .then(result =>{
 		  const students = data.computeStudentsStats(result);
 		  const campus = data.computeCampus(result);
 		  drawSearchStudent(students);
 		  drawMenu(campus);
-		})
-		.catch(error =>{
+      });
+    /* .catch(error =>{
 		  console.log('Error');
-		});
-	},
+		});*/
+  },
   
-	firstLetterToUpperCase: string => {
+  firstLetterToUpperCase: string => {
 		  return string.charAt(0).toUpperCase() + string.slice(1);
-	},
+  },
   
-	createSubtopics: subtemas => {
+  createSubtopics: subtemas => {
 	  let subtopics = subtemas;
 	  let propiedades = Object.values(subtopics);
 	  propiedades.forEach(elements => {
-		if (elements.completado === 1) {
+      if (elements.completado === 1) {
 		  elements.completedPercentage = 100;
-		} else {
+      } else {
 		  elements.completedPercentage = 0;
-		}
-		delete elements.completado;
-		elements.type = elements.tipo;
-		delete elements.tipo;
-		elements.duration = elements.duracionSubtema;
-		delete elements.duracionSubtema;
+      }
+      delete elements.completado;
+      elements.type = elements.tipo;
+      delete elements.tipo;
+      elements.duration = elements.duracionSubtema;
+      delete elements.duracionSubtema;
 	  });
 	  return subtopics;
-	},
+  },
   
-	createTopics: temas =>{
+  createTopics: temas =>{
 	  let topics = temas;
 	  let propiedades = Object.values(topics);
 	  propiedades.forEach(elements => {
-		elements.completedPercentage = elements.porcentajeCompletado;
-		elements.percentageDuration = Math.round((elements.duracionTemaCompletado * 100) / elements.duracionTema);
-		elements.subtopics = data.createSubtopics(elements.subtemas);
-		delete elements.duracionTema;
-		delete elements.duracionTemaCompletado;
-		delete elements.porcentajeCompletado;
-		delete elements.subtemasCompletados;
-		delete elements.subtemasTotales;
-		delete elements.subtemas;	
+      elements.completedPercentage = elements.porcentajeCompletado;
+      elements.percentageDuration = Math.round((elements.duracionTemaCompletado * 100) / elements.duracionTema);
+      elements.subtopics = data.createSubtopics(elements.subtemas);
+      delete elements.duracionTema;
+      delete elements.duracionTemaCompletado;
+      delete elements.porcentajeCompletado;
+      delete elements.subtemasCompletados;
+      delete elements.subtemasTotales;
+      delete elements.subtemas;	
 	  });
 	  return topics;
-	},
+  },
   
-	createStats: progress =>{
+  createStats: progress =>{
 	  let stats = {
-		status: '',
-		completedPercentage: 0,
-		topics: {}
+      status: '',
+      completedPercentage: 0,
+      topics: {}
 	  };	
 	  if (progress.porcentajeCompletado >= 90) {
-		stats.status = 'top';
+      stats.status = 'top';
 	  } else if (progress.porcentajeCompletado < 90 && progress.porcentajeCompletado > 60) {
-		stats.status = 'media';
+      stats.status = 'media';
 	  } else {
-		stats.status = 'bottom';
+      stats.status = 'bottom';
 	  }
 	  stats.completedPercentage = progress.porcentajeCompletado;
   
 	  stats.topics = data.createTopics(progress.temas);
 	  return stats;	
-	},
+  },
   
-	computeCampus: laboratoria => {
+  computeCampus: laboratoria => {
 	  let campus = [];
 	  campus = Object.getOwnPropertyNames(laboratoria);
 	  return campus;
-	},
+  },
   
-	computeStudentsStats: laboratoria => {
+  computeStudentsStats: laboratoria => {
 	  let studentsObject = [];
 	  let sedes = [];
 	  let nombres = [];
@@ -122,14 +121,14 @@ window.data = {
 	  sedes = Object.getOwnPropertyNames(laboratoria);
 	  generations = Object.values(laboratoria);
 	  generations.forEach(elements =>{
-		contY = 0;
-		let years = Object.values(elements.generacion);
-		generaciones = Object.getOwnPropertyNames(elements.generacion);		
-		years.forEach(students =>{
+      contY = 0;
+      let years = Object.values(elements.generacion);
+      generaciones = Object.getOwnPropertyNames(elements.generacion);		
+      years.forEach(students =>{
 		  let student = students.estudiantes;
 		  student.forEach(personalInfo =>{
-			let stats = data.createStats(personalInfo.progreso);
-			studentsObject.push({'campus': sedes[contI],
+          let stats = data.createStats(personalInfo.progreso);
+          studentsObject.push({'campus': sedes[contI],
 			  'generation': generaciones[contY],
 			  'name': personalInfo.nombre,
 			  'email': personalInfo.correo,
@@ -137,148 +136,161 @@ window.data = {
 			  'stats': stats});
 		  });
 		  contY++;
-		});
-		contI++;
+      });
+      contI++;
 	  });
 	  // console.log(studentsObject);
 	  return studentsObject;
-	},
+  },
   
-	computeGenerationsStats: laboratoria =>{
-	  let i = 0;
-	  let y = 0;
+  computeGenerationsStats: laboratoria =>{
+	  let contI = 0;
+	  let contY = 0;
 	  let suma = 0;
 	  generationObject = [];
 	  let sedes = Object.getOwnPropertyNames(laboratoria);
 	  let generaciones = Object.values(laboratoria);
 	  generaciones.forEach(elements =>{
-		let years = Object.values(elements.generacion);
-		let generations = Object.getOwnPropertyNames(elements.generacion);
-		y = 0;
-		years.forEach(students =>{
+      let years = Object.values(elements.generacion);
+      let generations = Object.getOwnPropertyNames(elements.generacion);
+      contY = 0;
+      years.forEach(students =>{
 		  let estudiantes = students.estudiantes;
 		  estudiantes.forEach(personalInfo =>{
-			suma += personalInfo.progreso.porcentajeCompletado;
+          suma += personalInfo.progreso.porcentajeCompletado;
 		  });
 		  let average = Math.round(suma / students.estudiantes.length);
-		  generationObject.push({'campus': sedes[i], 
-			'generation': generations[y], 
-			'count': students.estudiantes.length, 
-			'average': average});
-		  y++;
-		});
+		  generationObject.push({'campus': sedes[contI], 
+          'generation': generations[contY], 
+          'count': students.estudiantes.length, 
+          'average': average});
+		  contY++;
+      });
 			  
-		i++;
+      contI++;
 	  });
 	  return generationObject;
-	},
+  },
   
-	sortStudents: (students, orderBy, orderDirection) =>{
+  sortStudents: (students, orderBy, orderDirection) =>{
 	  let studentsNames = [];
 	  let orderStudents = [];
 	  let studentsPercentaje = [];
 	  if (orderBy === 'name' && orderDirection === 'ASC') {
-		students.forEach(student =>{
+      students.forEach(student =>{
 		  studentsNames.push(student.name);
-		});
-		studentsNames.sort();
-		for (let i = 0; i < studentsNames.length; i++) {
+      });
+      studentsNames.sort();
+      for (let i = 0; i < studentsNames.length; i++) {
 		  let result = data.filterStudents(students, studentsNames[i]);
 		  if (result.length === 1) {
-			orderStudents.push(result[0]);
+          orderStudents.push(result[0]);
 		  } else {
-			result.forEach(name => {
+          result.forEach(name => {
 			  orderStudents.push(name);
-			});
-			i++;
+          });
+          i++;
 		  }
-		}
+      }
 	  }
 	  if (orderBy === 'name' && orderDirection === 'DESC') {
-		students.forEach(student => {
+      students.forEach(student => {
 		  studentsNames.push(student.name);
-		});
-		studentsNames.sort();
-		studentsNames.reverse();
-		for (let i = 0; i < studentsNames.length; i++) {
+      });
+      studentsNames.sort();
+      studentsNames.reverse();
+      for (let i = 0; i < studentsNames.length; i++) {
 		  let result = data.filterStudents(students, studentsNames[i]);
 		  if (result.length === 1) {
-			orderStudents.push(result[0]);
+          orderStudents.push(result[0]);
 		  } else {
-			result.forEach(name =>{
+          result.forEach(name =>{
 			  orderStudents.push(name);
-			});
-			i++;
+          });
+          i++;
 		  }
-		}
+      }
 	  }
   
 	  if (orderBy === 'percentaje' && orderDirection === 'ASC') {
-		students.forEach(student =>{
+      students.forEach(student =>{
 		  studentsPercentaje.push(student.stats.completedPercentage);
-		});
-		studentsPercentaje.sort();
-		for (let i = 0; i < studentsPercentaje.length; i++) {
-		  result = data.filterStudentsByPercentaje(students, studentsPercentaje[i]);
-  		  if (result.length === 1) {
-  			orderStudents.push(result[0]);
-  		  } else {
-  			result.forEach(percentaje =>{
-  			  orderStudents.push(percentaje);
-  			});
-         	i += result.length;
-  		  }
+      });
+      studentsPercentaje.sort();
+      for (let i = 0; i < studentsPercentaje.length; i++) {
+        if (studentsPercentaje[i] !== studentsPercentaje[i - 1]) {
+          result = data.filterStudentsByPercentaje(students, studentsPercentaje[i]);
+			  if (result.length === 1) {
+            orderStudents.push(result[0]);
+			  } else {
+            result.forEach(percentaje =>{
+				  orderStudents.push(percentaje);
+            });
+			  }
+        }
   		}
-
 	  }
   
 	  if (orderBy === 'percentaje' && orderDirection === 'DESC') {
-  
+  		students.forEach(student =>{
+		  studentsPercentaje.push(student.stats.completedPercentage);
+      });
+      studentsPercentaje.sort();
+      studentsPercentaje.reverse();
+      for (let i = 0; i < studentsPercentaje.length; i++) {
+        if (studentsPercentaje[i] !== studentsPercentaje[i - 1]) {
+          result = data.filterStudentsByPercentaje(students, studentsPercentaje[i]);
+			  if (result.length === 1) {
+            orderStudents.push(result[0]);
+			  } else {
+            result.forEach(percentaje =>{
+				  orderStudents.push(percentaje);
+            });
+			  }
+        }
+  		}
 	  }
-    console.log(orderStudents);
 	  return orderStudents;
-	},
+  },
   
-	filterStudents: (students, search) =>{
+  filterStudents: (students, search) =>{
 	  const searchStudentData = [];
 	  students.forEach(student =>{
-		if (student.name.toLowerCase().indexOf(search.toLowerCase()) !== -1) {
+      if (student.name.toLowerCase().indexOf(search.toLowerCase()) !== -1) {
 		  searchStudentData.push(student);
-		}
+      }
 	  });
 	  return searchStudentData;
-	},
+  },
   
-	filterStudentsBySede: (students, sede) =>{
+  filterStudentsBySede: (students, sede) =>{
 	  const filterStudents = [];
 	  students.forEach(student =>{
-		if (student.campus === sede) {
+      if (student.campus === sede) {
 		  filterStudents.push(student);
-		}
+      }
 	  });
 	  return filterStudents;
-	},
+  },
   
-	filterStudentsByPercentaje: (students, percentaje) =>{
+  filterStudentsByPercentaje: (students, percentaje) =>{
 	  const searchStudentPercentage = [];
 	  students.forEach(student =>{
-		if (student.stats.completedPercentage === percentaje) {
+      if (student.stats.completedPercentage === percentaje) {
 		  searchStudentPercentage.push(student);
-		}
+      }
 	  });
 	  return searchStudentPercentage;
-	},
+  },
   
-	filterStudentsByGeneration: (students, generation) =>{
+  filterStudentsByGeneration: (students, generation) =>{
 	  const searchStudentsGeneration = [];
 	  students.forEach(student =>{
-		if (student.generation === generation) {
+      if (student.generation === generation) {
 		  searchStudentsGeneration.push(student);
-		}
+      }
 	  });
 	  return searchStudentsGeneration;
-	}
+  }
   
-  };
-
-
+};

@@ -9,14 +9,14 @@ const drawMenu = (campus) =>{
 };
 
 const drawCampus = (campus, students) =>{
-  let i = 1;
-  let y = 1;
+  let contI = 1;
+  let contY = 1;
   let studentsSantiago = 0;
   let studentsLima = 0;
   let studentsMexico = 0;
 
   campus.forEach(element =>{
-    document.getElementById(`sede${i++}`).innerHTML = element;
+    document.getElementById(`sede${contI++}`).innerHTML = element;
   });
 
   students.forEach(element =>{
@@ -31,9 +31,9 @@ const drawCampus = (campus, students) =>{
     }
   });
 	
-  document.getElementById(`students-sede${y++}`).innerHTML = studentsLima;
-  document.getElementById(`students-sede${y++}`).innerHTML = studentsMexico;
-  document.getElementById(`students-sede${y++}`).innerHTML = studentsSantiago;
+  document.getElementById(`students-sede${contY++}`).innerHTML = studentsLima;
+  document.getElementById(`students-sede${contY++}`).innerHTML = studentsMexico;
+  document.getElementById(`students-sede${contY++}`).innerHTML = studentsSantiago;
 };
 
 const drawGeneralStatistics = (students, sede) =>{
@@ -73,7 +73,7 @@ const drawGeneralStatistics = (students, sede) =>{
 /** ********** Vista sedes ***********/
 
 const drawNumberOfStudents = (generations, sede) =>{
-  let y = 1;
+  let contY = 1;
   let years = [];
   let students = [];
   generations.forEach(elements =>{
@@ -84,32 +84,51 @@ const drawNumberOfStudents = (generations, sede) =>{
       }
     }
   });
-  let i = 1;
+  let contI = 1;
   years.forEach(generation =>{
-    document.getElementById(`generation${i++}`).innerHTML = `${data.firstLetterToUpperCase(generation)} <br> generación`;
+    document.getElementById(`generation${contI++}`).innerHTML = `${data.firstLetterToUpperCase(generation)} <br> generación`;
   });
 
-  document.getElementById(`students-generation${y++}`).innerHTML = students[0];
-  document.getElementById(`students-generation${y++}`).innerHTML = students[1];
-  document.getElementById(`students-generation${y++}`).innerHTML = students[2];
+  document.getElementById(`students-generation${contY++}`).innerHTML = students[0];
+  document.getElementById(`students-generation${contY++}`).innerHTML = students[1];
+  document.getElementById(`students-generation${contY++}`).innerHTML = students[2];
 };
 
 const drawStudentsTable = (students, sede) =>{
   const filterStudents = data.filterStudentsBySede(students, sede);
   let result = '';
-  filterStudents.forEach((student, i) =>{
-    result += `<tr>
-                      <th scope="row">${i + 1}</th>
-                      <td><button class="no-button-sedes student-button">${student.name}</button></td>
-                      <td>${student.email}</td>
-                      <td>${data.firstLetterToUpperCase(student.generation)}</td>
-                      <td>${student.stats.completedPercentage} %</td>
-                    </tr>`;
-  });
-  document.getElementById('table-students-body').innerHTML = result;
+  drawTable(filterStudents);
+  orderTable(filterStudents);
 };
 
-/** ********** Vista generaciones ***********/
+/** *********** Funciones para ordenar ********/
+const orderTable = (students) =>{
+  document.getElementById('name-asc').addEventListener('click', event =>{
+    event.preventDefault();
+    const orderStudents = data.sortStudents(students, 'name', 'ASC');
+    drawTable(orderStudents);
+  });
+
+  document.getElementById('name-desc').addEventListener('click', event =>{
+    event.preventDefault();
+    const orderStudents = data.sortStudents(students, 'name', 'DESC');
+    drawTable(orderStudents);
+  });
+
+  document.getElementById('percentaje-asc').addEventListener('click', event =>{
+    event.preventDefault();
+    const orderStudents = data.sortStudents(students, 'percentaje', 'ASC');
+    drawTable(orderStudents);
+  });
+
+  document.getElementById('percentaje-desc').addEventListener('click', event =>{
+    event.preventDefault();
+    const orderStudents = data.sortStudents(students, 'percentaje', 'DESC');
+    drawTable(orderStudents);
+  });
+};
+
+/** *********** Vista generaciones ***********/
 
 const drawGeneration = (students, campus, generation) =>{
   let studentGeneration = '';
@@ -126,21 +145,14 @@ const drawGeneration = (students, campus, generation) =>{
   const studentsOfGeneration = data.filterStudentsByGeneration(studentsOfCampus, studentGeneration);
   let result = '';
   document.getElementById('table-students-body').innerHTML = result;
-  studentsOfGeneration.forEach((student, i) =>{
-    result += `<tr>
-	                      <th scope="row">${i + 1}</th>
-	                      <td><button class="no-button-sedes student-button">${student.name}</button></td>
-	                      <td>${student.email}</td>
-	                      <td>${data.firstLetterToUpperCase(student.generation)}</td>
-	                      <td>${student.stats.completedPercentage} %</td>
-	                    </tr>`;
-  });
-  document.getElementById('table-students-body').innerHTML = result;
+  drawTable(studentsOfGeneration);
+  orderTable(studentsOfGeneration);
   document.getElementById('table-title').innerHTML = `<a href="sede${campus}.html">Estudiantes ${campus}</a>  &#62; &#62; ${data.firstLetterToUpperCase(studentGeneration)} generación`;
 };
 
+
 const getGenerationAndCampus = students =>{
-    document.getElementById('btn-generation1').addEventListener('click', event =>{
+  document.getElementById('btn-generation1').addEventListener('click', event =>{
     event.preventDefault();
     document.getElementById('btn-generation2').className = 'no-button-sedes';
     document.getElementById('btn-generation3').className = 'no-button-sedes';
@@ -206,6 +218,17 @@ const drawSearchStudent = students =>{
 };
 
 const drawTable = (object) =>{
+  let result = '';
+  object.forEach((student, i) =>{
+    result += `<tr>
+                        <th scope="row">${i + 1}</th>
+                        <td><button class="no-button-sedes student-button">${student.name}</button></td>
+                        <td>${student.email}</td>
+                        <td>${data.firstLetterToUpperCase(student.generation)}</td>
+                        <td>${student.stats.completedPercentage} %</td>
+                      </tr>`;
+  });
+  document.getElementById('table-students-body').innerHTML = result;
+};
 
-}
-
+ 

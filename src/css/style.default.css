@@ -987,7 +987,6 @@ section.dashboard-counts .row {
 }
 
 section.dashboard-counts div[class*='col-'] .item {
-  border-right: 1px solid #eee;
   padding: 15px 0;
 }
 
