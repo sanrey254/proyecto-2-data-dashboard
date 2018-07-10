@@ -37,17 +37,17 @@ const drawCampus = (campus, students) =>{
 };
 
 
-/******************Dibujar estadisticas generales********************/
+/** ****************Dibujar estadisticas generales********************/
 const drawGeneralStatistics = (students, sede, generation) =>{
-  const namesGroup = ['Total de estudiantes', 'PROGRESO: arriba del 90%', 'PROGRESO: en la media', 'PROGRESO: debajo del 60%'];
+  const namesGroup = ['Total de estudiantes', 'ESTUDIANTES: arriba del 90%', 'ESTUDIANTES: en la media', 'ESTUDIANTES: debajo del 60%'];
   const studentsNumber = [0, 0, 0, 0];
   let filterStudents = [];
   let result = '';
 
   if (sede === 'General') {
     filterStudents = students;
-  }else{
-      if (generation === 'General') {
+  } else {
+    if (generation === 'General') {
       filterStudents = data.filterStudentsBySede(students, sede);
     } else {
       filterStudentsCampus = data.filterStudentsBySede(students, sede);
@@ -57,13 +57,13 @@ const drawGeneralStatistics = (students, sede, generation) =>{
   
   studentsNumber[0] = filterStudents.length;
   filterStudents.forEach(student =>{
-    if (student.stats.status === 'top') {
+    if (student.stats.status === 'alto') {
       studentsNumber[1]++;
     }
-    if (student.stats.status === 'media') {
+    if (student.stats.status === 'medio') {
       studentsNumber[2]++;
     }
-    if (student.stats.status === 'bottom') {
+    if (student.stats.status === 'suficiente') {
       studentsNumber[3]++;
     }
   });
@@ -76,21 +76,20 @@ const drawGeneralStatistics = (students, sede, generation) =>{
                  	</div>
                 </div>`;
   }
-
   document.getElementById('general-statistic').innerHTML = result;
 };
 
-/************* Dibujar tablas de estudiantes *******************/
+/** *********** Dibujar tablas de estudiantes *******************/
 const drawTable = (object) =>{
   let result = '';
-  object.forEach((student, i) =>{
+  object.forEach((student, i) =>{ 
     result += `<tr>
-                        <th scope="row">${i + 1}</th>
-                        <td><button class="no-button-sedes student-button">${student.name}</button></td>
-                        <td>${student.email}</td>
-                        <td>${data.firstLetterToUpperCase(student.generation)}</td>
-                        <td>${student.stats.completedPercentage} %</td>
-                      </tr>`;
+                  <th scope="row">${i + 1}</th>
+                  <td><button class="no-button-sedes student-button" id="${student.campus}" name="${student.name}">${student.name}</button></td>
+                  <td class="d-none d-md-block d-lg-block d-xl-block">${student.email}</td>
+                  <td>${data.firstLetterToUpperCase(student.generation)}</td>
+                  <td>${student.stats.completedPercentage} %</td>
+                </tr>`;
   });
   document.getElementById('table-students-body').innerHTML = result;
 };
@@ -173,6 +172,7 @@ const drawGeneration = (students, campus, generation) =>{
   document.getElementById('table-students-body').innerHTML = result;
   drawTable(studentsOfGeneration);
   orderTable(studentsOfGeneration);
+  getDrawInformation(studentsOfGeneration);
   document.getElementById('table-title').innerHTML = `<a href="sede${campus}.html">Estudiantes ${campus}</a>  &#62; &#62; ${data.firstLetterToUpperCase(studentGeneration)} generación`;
 };
 
@@ -233,14 +233,53 @@ const drawSearchStudent = students =>{
         studentResult.forEach(result =>{
           bodySearchCard += `<div class="item d-flex align-items-center">
 					                  <div class="text">
-					                    <p><span class='tags-search'>Nombre:</span><button class="no-button-sedes student-button">${result.name}</button></p><p><span class='tags-search'>Sede:</span> ${result.campus} - ${data.firstLetterToUpperCase(result.generation)} generación </p><p><span class='tags-search'>Correo:</span> ${result.email}</p><p><span class='tags-search'>Progreso:</span> ${result.stats.completedPercentage}% completitud</p>
+					                    <p><span class='tags-search'>Nombre:</span><button id="${result.campus}" name="${result.name}" class="no-button-sedes student-button">${result.name}</button></p><p><span class='tags-search'>Sede:</span> ${result.campus} - ${data.firstLetterToUpperCase(result.generation)} generación </p><p><span class='tags-search'>Correo:</span> ${result.email}</p><p><span class='tags-search'>Progreso:</span> ${result.stats.completedPercentage}% completitud</p>
 					                  </div>
 					               </div>`;
         });
         document.getElementById('body-student-card').innerHTML = bodySearchCard;
+        getDrawInformation(studentResult);
       }
     }
   });
 };
 
- 
+/** ************ Vista Información por estudiante *********/
+
+const getDrawInformation = students =>{
+  const buttonSelected = document.getElementsByClassName('student-button');
+  for(let i = 0; i < buttonSelected.length; i++){
+    buttonSelected[i].addEventListener('click', event =>{
+        const campusStudent = buttonSelected[i].getAttribute('id');
+        const nameStudent = buttonSelected[i].getAttribute('name');
+        document.getElementById('div1').style.display = 'none';
+        document.getElementById('div2').style.display = 'none';
+        document.getElementById('div3').style.display = 'none';
+        document.getElementById('individual-information').style.display = 'block';
+        drawStudentInformation(students, nameStudent, campusStudent);
+    })
+  }
+}
+
+const drawStudentInformation = (students, name, campus) =>{
+  document.getElementById('titile-page').innerHTML = `<a href="consultas.html">Consulta >> </a>  ${name}`;
+  const informationByCampus = data.filterStudentsBySede(students, campus);
+  const informationByStudent = data.filterStudents(informationByCampus, name);
+  const topicsStudent = informationByStudent[0].stats.topics;
+  const nameTopics = Object.keys(topicsStudent);
+  nameTopics.forEach((topic, i) =>{
+    document.getElementById(`topic${i+1}`).innerHTML = topic.replace('-', ' ');
+  })
+
+  document.getElementById('percentaje-general').innerHTML = `${informationByStudent[0].stats.completedPercentage}%`
+
+  document.getElementById('student-personal-information').innerHTML = `<strong>${informationByStudent[0].name}</strong><p class="pt-3">${informationByStudent[0].campus} - ${data.firstLetterToUpperCase(informationByStudent[0].generation)} generación</p><p class="pt-3">${informationByStudent[0].email}</p><p class="pt-3">Turno ${informationByStudent[0].turn}</p>`;
+
+  document.getElementById('general-clasification').innerHTML = data.firstLetterToUpperCase(informationByStudent[0].stats.status);
+
+  const topicsValues = Object.values(topicsStudent);
+  topicsValues.forEach((value, i) =>{
+    document.getElementById(`topic-percentaje${i+1}`).innerHTML = `${value.completedPercentage}%`;
+  })
+
+}

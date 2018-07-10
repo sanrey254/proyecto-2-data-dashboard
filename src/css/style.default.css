@@ -195,7 +195,9 @@ option[value=""][disabled] {
   color: #aaa;
   font-weight: 300;
 }
-
+#individual-information{
+  display: none;
+}
 /*=== Helpers ===*/
 .text-bold {
   font-weight: 700;

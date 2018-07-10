@@ -1,19 +1,19 @@
 describe('data', () => {
 
   it('debería exponer función computeStudentsStats en objeto global', () => {
-    assert.isFunction(computeStudentsStats);
+    assert.isFunction(data.computeStudentsStats);
   });
 
   it('debería exponer función computeGenerationsStats en objeto global', () => {
-    assert.isFunction(computeGenerationsStats);
+    assert.isFunction(data.computeGenerationsStats);
   });
 
   it('debería exponer función sortStudents en objeto global', () => {
-    assert.isFunction(sortStudents);
+    assert.isFunction(data.sortStudents);
   });
 
   it('debería exponer función filterStudents en objeto global', () => {
-    assert.isFunction(filterStudents);
+    assert.isFunction(data.filterStudents);
   });
 
   describe('computeStudentsStats(laboratoria)', () => {
@@ -21,7 +21,7 @@ describe('data', () => {
     //sconst { laboratoria } = fixtures;
 
     it('debería retornar arreglo de students con propiedad campus y propiedad generation', () => {
-      const processed = computeStudentsStats(fixtures);
+      const processed = data.computeStudentsStats(fixtures);
       
       processed.forEach((student) => {
         assert.ok(student.hasOwnProperty('campus'));
@@ -30,7 +30,7 @@ describe('data', () => {
     });
 
     it('debería retornar arreglo de students con propiedad stats', () => {
-      const processed = computeStudentsStats(fixtures);
+      const processed = data.computeStudentsStats(fixtures);
     
       processed.forEach( (student, i) => {
         assert.ok(student.hasOwnProperty('stats'));
@@ -46,7 +46,7 @@ describe('data', () => {
     });
 
     describe('student.stats para el primer usuario en data de prueba - ver carpeta data/', () => {
-      const processed = computeStudentsStats(fixtures);
+      const processed = data.computeStudentsStats(fixtures);
       it('debería tener propiedad completedPercentage con valor 89', () => {       
         assert.equal(processed[0].stats.completedPercentage, 89);
       });
@@ -74,7 +74,7 @@ describe('data', () => {
   describe('computeGenerationsStats(laboratoria)', () => {
     const { laboratoria } = fixtures;
     
-    const processed = computeGenerationsStats(fixtures);
+    const processed = data.computeGenerationsStats(fixtures);
   
     it('debería retornar un arreglo de generaciones con propiedad average y count', () => {
       processed.forEach((generation) => {
@@ -84,7 +84,7 @@ describe('data', () => {
     });
     
     describe('generation para la primera generación en data de prueba - ver carpeta data/', () => {
-      const processed = computeGenerationsStats(fixtures);
+      const processed = data.computeGenerationsStats(fixtures);
 
       it('debería tener una propiedad average con valor 75', () => {
         assert.equal(processed[0].average, 75);
@@ -96,12 +96,20 @@ describe('data', () => {
 
     }); 
   });
+
+  describe('filterStudents(users, search)', () => {
+    const processed = data.filterStudents(data.computeStudentsStats(fixtures),"Cari Candyce");
+    it('debería retornar nuevo arreglo solo el nombre de Cari Candyce',() =>{
+      assert.equal(processed.length, 2);
+    });
+
+  });
   
   describe('sortStudents(students, orderBy, orderDirection)', () => {
-    const processedASC = sortStudents(computeStudentsStats(fixtures),"name", "ASC");
-    const processedDESC = sortStudents(computeStudentsStats(fixtures),"name", "DESC");
-    const processedpercentageASC = sortStudents(computeStudentsStats(fixtures),"completedPercentage", "ASC");
-    const processedpercentageDESC = sortStudents(computeStudentsStats(fixtures),"completedPercentage", "DESC");
+    const processedASC = data.sortStudents(data.computeStudentsStats(fixtures),"name", "ASC");
+    const processedDESC = data.sortStudents(data.computeStudentsStats(fixtures),"name", "DESC");
+    const processedpercentageASC = data.sortStudents(data.computeStudentsStats(fixtures),"percentage", "ASC");
+    const processedpercentageDESC = data.sortStudents(data.computeStudentsStats(fixtures),"percentage", "DESC");
     
     it('debería retornar arreglo de estudiantes ordenado por nombre ASC', ()=>{
       assert.equal(processedASC[0].name, "Aaliyah Lessie");
@@ -119,13 +127,5 @@ describe('data', () => {
       assert.equal(processedpercentageDESC[0].name, "Rachael Cate");
       assert.equal(processedpercentageDESC[133].name, "Vicki Annice");
     });
-  });
-
-  describe('filterStudents(users, search)', () => {
-    const processed = filterStudents(computeStudentsStats(fixtures),"Cari Candyce");
-    it('debería retornar nuevo arreglo solo el nombre de Cari Candyce',() =>{
-      assert.equal(processed.length, 2);
-    });
-
   });
 });
