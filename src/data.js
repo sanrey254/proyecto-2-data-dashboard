@@ -5,7 +5,7 @@ window.data = {
 		  const students = data.computeStudentsStats(result);
 		  const campus = data.computeCampus(result);
 		  const statusGeneration = data.computeGenerationsStats(result);
-		  drawGeneralStatistics(students, 'General');		
+		  drawGeneralStatistics(students, 'General', '');		
 		  drawCampus(campus, students);
 		  drawMenu(campus);
       });	
@@ -21,12 +21,11 @@ window.data = {
 		  const statusGeneration = data.computeGenerationsStats(result);	
 		  const campus = data.computeCampus(result);	
 		  data.sortStudents(students, 'percentaje', 'DESC');
-		  drawGeneralStatistics(students, sede);
+		  drawGeneralStatistics(students, sede, 'General');
 		  drawStudentsTable(students, sede);
 		  drawNumberOfStudents(statusGeneration, sede);
 		  getGenerationAndCampus(students);
 		  drawMenu(campus);
-		  orderTable(students);
       });
     /* .catch(error =>{
 		  console.log('Error');
@@ -95,11 +94,10 @@ window.data = {
       stats.status = 'top';
 	  } else if (progress.porcentajeCompletado < 90 && progress.porcentajeCompletado > 60) {
       stats.status = 'media';
-	  } else {
+	  } else if(progress.porcentajeCompletado <= 60) {
       stats.status = 'bottom';
 	  }
 	  stats.completedPercentage = progress.porcentajeCompletado;
-  
 	  stats.topics = data.createTopics(progress.temas);
 	  return stats;	
   },
@@ -139,7 +137,7 @@ window.data = {
       });
       contI++;
 	  });
-	  // console.log(studentsObject);
+	  //console.log(studentsObject);
 	  return studentsObject;
   },
   

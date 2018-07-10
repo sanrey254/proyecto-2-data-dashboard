@@ -36,16 +36,25 @@ const drawCampus = (campus, students) =>{
   document.getElementById(`students-sede${contY++}`).innerHTML = studentsSantiago;
 };
 
-const drawGeneralStatistics = (students, sede) =>{
+
+/******************Dibujar estadisticas generales********************/
+const drawGeneralStatistics = (students, sede, generation) =>{
   const namesGroup = ['Total de estudiantes', 'PROGRESO: arriba del 90%', 'PROGRESO: en la media', 'PROGRESO: debajo del 60%'];
   const studentsNumber = [0, 0, 0, 0];
   let filterStudents = [];
   let result = '';
+
   if (sede === 'General') {
     filterStudents = students;
-  } else {
-    filterStudents = data.filterStudentsBySede(students, sede);
+  }else{
+      if (generation === 'General') {
+      filterStudents = data.filterStudentsBySede(students, sede);
+    } else {
+      filterStudentsCampus = data.filterStudentsBySede(students, sede);
+      filterStudents = data.filterStudentsByGeneration(filterStudentsCampus, generation);
+    }
   }
+  
   studentsNumber[0] = filterStudents.length;
   filterStudents.forEach(student =>{
     if (student.stats.status === 'top') {
@@ -70,6 +79,22 @@ const drawGeneralStatistics = (students, sede) =>{
 
   document.getElementById('general-statistic').innerHTML = result;
 };
+
+/************* Dibujar tablas de estudiantes *******************/
+const drawTable = (object) =>{
+  let result = '';
+  object.forEach((student, i) =>{
+    result += `<tr>
+                        <th scope="row">${i + 1}</th>
+                        <td><button class="no-button-sedes student-button">${student.name}</button></td>
+                        <td>${student.email}</td>
+                        <td>${data.firstLetterToUpperCase(student.generation)}</td>
+                        <td>${student.stats.completedPercentage} %</td>
+                      </tr>`;
+  });
+  document.getElementById('table-students-body').innerHTML = result;
+};
+
 /** ********** Vista sedes ***********/
 
 const drawNumberOfStudents = (generations, sede) =>{
@@ -101,29 +126,29 @@ const drawStudentsTable = (students, sede) =>{
   orderTable(filterStudents);
 };
 
-/** *********** Funciones para ordenar ********/
-const orderTable = (students) =>{
+/** *********** Eventos para ordernar tablas ********/
+const orderTable = (filterStudentsForTable) =>{
   document.getElementById('name-asc').addEventListener('click', event =>{
     event.preventDefault();
-    const orderStudents = data.sortStudents(students, 'name', 'ASC');
+    const orderStudents = data.sortStudents(filterStudentsForTable, 'name', 'ASC');
     drawTable(orderStudents);
   });
 
   document.getElementById('name-desc').addEventListener('click', event =>{
     event.preventDefault();
-    const orderStudents = data.sortStudents(students, 'name', 'DESC');
+    const orderStudents = data.sortStudents(filterStudentsForTable, 'name', 'DESC');
     drawTable(orderStudents);
   });
 
   document.getElementById('percentaje-asc').addEventListener('click', event =>{
     event.preventDefault();
-    const orderStudents = data.sortStudents(students, 'percentaje', 'ASC');
+    const orderStudents = data.sortStudents(filterStudentsForTable, 'percentaje', 'ASC');
     drawTable(orderStudents);
   });
 
   document.getElementById('percentaje-desc').addEventListener('click', event =>{
     event.preventDefault();
-    const orderStudents = data.sortStudents(students, 'percentaje', 'DESC');
+    const orderStudents = data.sortStudents(filterStudentsForTable, 'percentaje', 'DESC');
     drawTable(orderStudents);
   });
 };
@@ -144,6 +169,7 @@ const drawGeneration = (students, campus, generation) =>{
   const studentsOfCampus = data.filterStudentsBySede(students, campus);
   const studentsOfGeneration = data.filterStudentsByGeneration(studentsOfCampus, studentGeneration);
   let result = '';
+  drawGeneralStatistics(studentsOfGeneration, campus, studentGeneration);
   document.getElementById('table-students-body').innerHTML = result;
   drawTable(studentsOfGeneration);
   orderTable(studentsOfGeneration);
@@ -215,20 +241,6 @@ const drawSearchStudent = students =>{
       }
     }
   });
-};
-
-const drawTable = (object) =>{
-  let result = '';
-  object.forEach((student, i) =>{
-    result += `<tr>
-                        <th scope="row">${i + 1}</th>
-                        <td><button class="no-button-sedes student-button">${student.name}</button></td>
-                        <td>${student.email}</td>
-                        <td>${data.firstLetterToUpperCase(student.generation)}</td>
-                        <td>${student.stats.completedPercentage} %</td>
-                      </tr>`;
-  });
-  document.getElementById('table-students-body').innerHTML = result;
 };
 
  
