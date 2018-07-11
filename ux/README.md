@@ -1,151 +1,67 @@
-# TABLERO DE DATOS
+# Data dashboard
 
-#### ¿Quiénes son los principales usuarios de producto?.
+### ¿Quiénes son los principales usuarios de producto?
 
-__**Todos los que conforman laboratoria e influyen en el desarrollo intelectual de las integrantes de Laboratoria,principalmente se tenia previsto este programa para uso exclusivo de los Training Manager de todas las sedes que conforman  laboratoria,aunque ahora se decidio ampliarse para beneficio de los coaches y tambien para beneficio de los creadores de Laboratoria.**__
-
-__**Con la finalidad de poder ver el progreso y las areas de oportunidad de las estudiantes de Laboratoria y poder abordar de mejor manera los conflictos que puedan presentarse en algun momento.**__
+Las Training Managers y el staff de Laboratoria involucrado en el desarrollo de las estudiantes. Inicialmente se inicio su desarrollo para uso exclusivo de las Training Manage, aunque se tomo en consideraciòn que su uso serà de utiliad para los coaches y miembros del staff de Laboratoria.
 
 ###  ¿Cuáles son los objetivos de estos usuarios en relación con el producto?
 
+Contar con un sistema que permita administrar y consultar toda la informaciòn sobre las estudiantes de Laboratoria por medio de una interfaz dinàmica y de fàcil acceso. De esta forma se podrà visualizar el desarrolo de cada una y, poder de esta forma, detectar y atender de manera efectiva las dudas o conflictos que puedan presentarse.
+
+### Anàlisis del problema
+
+A travès de una entrevista a la Traning Manager de la CDMX de la sexta generaciòn, y con base en los datos recopilados por un cuestionario en lìnea enviado a diversos integrantes del equipo de Laboratoria se obtuvieron las siguientes conclusiones.
+
+ * Actualmente no se cuenta con un sistema que facilite el acceso a la informaciòn requerida, se utilizan mùltiples hojas de càlculo para adminstrarla.
+
+ * Se requiere un sistema en el que se puedan visualizar los datos de forma ordenada y dinàmica, mostrando estadìsticas de avance por sede, generaciòn y estudiante.
+
+ * Se necesita que el acceso al sistema sea restringido por contener informaciòn personal de las estudiantes, se solicita que los usuarios se identifiquen antes de acceder a ella.
+
+ * Se concidera una prioridad que la interfaz del sistema se adapte a todos los dispositivos mòviles.
+
+ * La principal informaciòn a la que se quiere acceder es al nùmero de estudiantes activas y los porcentajes de avance de cada estudiante con respecto a los temas y subtemas que conforman el Bootcamp.
+
+Cuestionario en linea: https://jazmin64.typeform.com/to/kl4Ftk
+
+### Proceso de diseño
+Tomando en cuenta toda la información recopilada, se analizó cada una de las necesidades expresadas por los usuarios para iniciar con el porceso de diseño para el sistema de data dashboard.
+
+**Se realizó una investigación sobre productos similares existentes en el mercado**
+Esto tableros ofrecen funcionalides generales y limitadas, no resuelven las necesidades específicas de cada usuario y la mayoría de estos tienen un costo elevado.
  
-**Ambos comparten objetivos ,buscan poder ver el desarrolo de las alumnas y atender de manera efectiva las dudas o conflictos que puedan presentarse en sentido academico.**
-
-#### ENTREVISTA TRAINING MANAGER
-
-__**NUESTRA TRAINING MANAGER DE LA SEDE DE CIUDAD DE MEXICO GENERACION 6**__
-
-**Actualmente no hay , **no existe una manera fácil de obtener dicha informacion** , todo se hace atravez de excel y es muy tedioso el proceso.**
-
-
-**No importan las gráficas,prefiere que el programa sea fácil de usar**
-
-**Seria una excelente idea el usar usuario y contraseña ya que así solo estaría disponible para usuarios concretos pertenecientes a  Laboratoria.**
-
- **Es prioridad que pueda usarse en diferentes plataformas,ya que seria muy útil poder acceder a el desde el móvil**
-
-**Es importante contar con el tablero de datos para poder tomar decisión para un mejor desarrollo de las alumnas.**
-
-
-
-##### Cuestionario en linea (https://jazmin64.typeform.com/to/kl4Ftk)
-
-##### Prototipo para Android (https://marvelapp.com/31i025f/screen/45103195)
-
-
-
-
-###  ¿Cuáles son los datos más relevantes que quieren ver en la interfaz y por qué?
-
- - [ ]  *1 : Primero la informacion de las sedes **¿Porque?** para poder saber con cuantas sedes cuentan.*
-
-- [ ]  *2 : La generación **¿Porque?** Para saber con cuantas generaciones cuentan.*
-
-- [ ]  *3 : Promedio por generacion. **¿Porque?** Para saber que calificaion tuvo cada generacion y por sede.*
-
-
-- [ ] *4 : La informacion de las egresadas **¿Porque?** Para  saber cuantas estudiantes lograron concluir el bootcamp.*
- 
-- [ ]  *5 : Temas vistos y desempeño de cada alumna egresada **¿Porque?** para medir el desempeñode cada alumna.* 
-
-- [ ] *6 : Informacion de las estudiantes **¿Porque?** Le permite saber con cuantas estudiantes cuenta en la generacion actual.*
-
-- [ ] *7 : Temas abarcados y desempeño por tema **¿Porque?** Le permite saber que temas conocen las estudiantes y que temas abordar en futuras clases.*
-
-
-
-
-## ¿ Cómo los descubriste?
-
-
-__**Preguntando que parametros toman para futuras clases que se les daran a las alumnas,ademas de que es como miden su evolucion y les permite a ellos implementar mejoras al programa educativo.**__
-
-
-#### Cuándo revisan normalmente estos datos los usuarios.
-
-__**Lo hacen constantemente ,para saber que mejoras implementar.**__
-
-#### Cómo crees que el producto les está resolviendo sus problemas.
-
-__**En gran manera porque hace mas accesible obtener la información deseada.**__
-
-## Cómo fue tu proceso de diseño.
-
-#### Tomando en cuenta los tableros existentes, ademas de que muchos tableros ya existentes se limitan a regiones especificas,y para poder usarlos se requiere pagar una mensualidad o anualidad.
- 
- ![tablerosexistentes](/ux/img/tablerosexistentes.png)
-
-
-
-
-
+![tablerosexistentes](/ux/img/tablerosexistentes.png)
 
 ![tableroagencyanalitic](/ux/img/tableroagencyanalitic.png)
 
-
-
- ![agencyanaliticinicio](/ux/img/agencyanaliticinicio.png) 
-
-
-
-
-
-
- ### En esta imagen tomamos en cuenta el Tablero de Datos llamado 
- ### "CLIC DATA"
- #### El cual esta limitado su uso para dos regiones ,las cuales son ; **Irlanda y Virginia.**
- #### Ademas de que tiene un costo
-
- ![clicdata](/src/img/clicdata.png) 
 ![tablerozohohreports](/src/img/tablerozohoreports.png) 
-![zohoreportscosto](/src/img/zohoreportscosto.png) 
-
-
-### Realizamos una encuestra y comparamos los resultados obtenidos.
-
-#### __**Cuestionario .**__
- ![cuestionariopreguntas](/src/img/cuestionariopreguntas.png) 
-
  
-
- ![cuestionarioresultados](/src/img/cuestionarioresultados.png) 
-
-
-
-#### En esta imagen se puede observar nuestro sketch.
+**Para inciciar con el desarrollo se escribió un pseudocódigo y un diagrama de flujo**
+El pseudocódigo permite establecer las principales acciones que se realizarán dentro del sistema y el diagrama permite establecer el flujo a través del cual se ejecutarán dichas acciones.
 
 ![sketch1](/src/img/sketch1.png)
 
-
 ![sketch2](/src/img/sketch2.jpg)
-
 
 ![sketch3](/src/img/sketch3.jpg)
 
+![diagrama](/src/img/diagramadeflujo.png)
 
-#### El Proceso para Diseñar el programa fue basandonos en los resultados obtenidos por nuestros usuarios,mediante entrevistas y encuestas para poder reforzar o modificar nuestro prototipo.
+**Se diseñaron prototipos para platoformas web y dispositivos móviles**
+Prototipo para web: https://marvelapp.com/3jdjh1j/screen/45140790
+Prototipo para Android: https://marvelapp.com/31i025f/screen/45103195
 
- ![primeralcance](/src/img/primeralcance.png)
+**El diseño de las interfaces se baso en la identidad de Laboratoria**
+Los colores utilizados en las interfaces, así como la tipografía fueron seleccionados teniendo en cuenta la identidad de Laboratoria y su ![branding](https://www.behance.net/gallery/62847359/Laboratoria-Re-Branding).
 
- ![diagrama](/src/img/diagramadeflujo.png)
+### Prubea de interfaz adaptada a un dispositivo móvil
 
-
-
-#### Asi luce el diseño probado en plataforma mobile.
-
- ![testeoprueba1](/src/img/testeoprueba1.png)
-
+![testeoprueba1](/src/img/testeoprueba1.png)
 
 ![testeoprueba2](/src/img/testeoprueba2.png)
 
+### Prueba de interfaz web
 
+![segundoalcance](/src/img/segundoalcance.png)
 
-
-Prototipo para Pc (https://marvelapp.com/3jdjh1j/screen/45140790)
-
-####  Asi luce el diseño probado en plataforma web.
-
-
-  ![segundoalcance](/src/img/segundoalcance.png)
-
- ![segujndoalcanceb](/src/img/segundoalcanceb.png)
+![segujndoalcanceb](/src/img/segundoalcanceb.png)

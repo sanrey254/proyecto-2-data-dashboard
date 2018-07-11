@@ -248,18 +248,18 @@ const drawSearchStudent = students =>{
 
 const getDrawInformation = students =>{
   const buttonSelected = document.getElementsByClassName('student-button');
-  for(let i = 0; i < buttonSelected.length; i++){
+  for (let i = 0; i < buttonSelected.length; i++) {
     buttonSelected[i].addEventListener('click', event =>{
-        const campusStudent = buttonSelected[i].getAttribute('id');
-        const nameStudent = buttonSelected[i].getAttribute('name');
-        document.getElementById('div1').style.display = 'none';
-        document.getElementById('div2').style.display = 'none';
-        document.getElementById('div3').style.display = 'none';
-        document.getElementById('individual-information').style.display = 'block';
-        drawStudentInformation(students, nameStudent, campusStudent);
-    })
+      const campusStudent = buttonSelected[i].getAttribute('id');
+      const nameStudent = buttonSelected[i].getAttribute('name');
+      document.getElementById('div1').style.display = 'none';
+      document.getElementById('div2').style.display = 'none';
+      document.getElementById('div3').style.display = 'none';
+      document.getElementById('individual-information').style.display = 'block';
+      drawStudentInformation(students, nameStudent, campusStudent);
+    });
   }
-}
+};
 
 const drawStudentInformation = (students, name, campus) =>{
   document.getElementById('titile-page').innerHTML = `<a href="consultas.html">Consulta >> </a>  ${name}`;
@@ -268,18 +268,14 @@ const drawStudentInformation = (students, name, campus) =>{
   const topicsStudent = informationByStudent[0].stats.topics;
   const nameTopics = Object.keys(topicsStudent);
   nameTopics.forEach((topic, i) =>{
-    document.getElementById(`topic${i+1}`).innerHTML = topic.replace('-', ' ');
-  })
+    document.getElementById(`topic${i + 1}`).innerHTML = topic.replace('-', ' ');
+  });
 
-  document.getElementById('percentaje-general').innerHTML = `${informationByStudent[0].stats.completedPercentage}%`
-
+  document.getElementById('percentaje-general').innerHTML = `${informationByStudent[0].stats.completedPercentage}%`;
   document.getElementById('student-personal-information').innerHTML = `<strong>${informationByStudent[0].name}</strong><p class="pt-3">${informationByStudent[0].campus} - ${data.firstLetterToUpperCase(informationByStudent[0].generation)} generación</p><p class="pt-3">${informationByStudent[0].email}</p><p class="pt-3">Turno ${informationByStudent[0].turn}</p>`;
-
   document.getElementById('general-clasification').innerHTML = data.firstLetterToUpperCase(informationByStudent[0].stats.status);
-
   const topicsValues = Object.values(topicsStudent);
   topicsValues.forEach((value, i) =>{
-    document.getElementById(`topic-percentaje${i+1}`).innerHTML = `${value.completedPercentage}%`;
-  })
-
-}
+    document.getElementById(`topic-percentaje${i + 1}`).innerHTML = `${value.completedPercentage}%`;
+  });
+};

@@ -20,7 +20,6 @@ window.data = {
 			  const students = data.computeStudentsStats(result);
 			  const statusGeneration = data.computeGenerationsStats(result);
 			  const campus = data.computeCampus(result);
-			  data.sortStudents(students, 'percentaje', 'DESC');
 			  drawGeneralStatistics(students, sede, 'General');
 			  drawStudentsTable(students, sede);
 			  drawNumberOfStudents(statusGeneration, sede);
@@ -42,9 +41,9 @@ window.data = {
 			  getDrawInformation(students);
 			  drawMenu(campus);
 		  })
-		  /*.catch(error => {
+		  .catch(error => {
 			  console.log('Error');
-		  });*/
+		  });
   },
   
   firstLetterToUpperCase: string => {

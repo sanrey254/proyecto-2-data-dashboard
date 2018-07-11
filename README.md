@@ -1,59 +1,49 @@
-# TABLERO DE DATOS
 ## DATA DASHBOARD 
 
-**Este  tablero de datos esta principalmente destinatado pra el equipo que conforma laboratoria ,ya que ellos desean un manejo eficaz y rapido de los datos obtenidos de cada alumna .Para ver su rendimiento durante el bootcamp,tambien para poder implementar mejoras en el metodo de apoyo para que las laumnas puedan tener un mejor desempeño y no se queden resagadas con temas durante el bootcamp.**
+** Este  Data dashboard esta desarrollado para ser utilizado por el staff de Laboratoria. Permite manejar de forma eficaz toda la información referente al control de las estudiantes, a través de una interfaz intuitiva y fácil de usar.
+La implementación de este sistema automatizará la administración, el acceso y la visualización de la información **
 
-### TABLERO DE DATOS
-#### ALGORITMO
+#### Características
+El data dashboard `<Laboratoria> Admin` permite a sus usuarios:
+	1. Visualizar estadísticas generales de todas las sedes (total de estudiantes, número de estudiantes según clasificación de progreso: `Alto`, `Medio` y `Suficiente`).
+	2. Listar y seleccionar sedes.
+	3. Dentro de cada sede:
+		3.1 Visualizar estadísticas generales (total de estudiantes, número de estudiantes según clasificación de progreso: `Alto`, `Medio` y `Suficiente`).
+		3.2 Listar y seleccionar generaciones.
+		3.3 Listar estudiantes con información básica y porcentaje de completitud.
+		3.4 Ordenar estudiantes de forma ascendente y descendente por nombre o porcentaje de completitud.
+	4. Dentro de cada generación:
+		4.1 3.1 Visualizar estadísticas generales (total de estudiantes, número de estudiantes según clasificación de progreso: `Alto`, `Medio` y `Suficiente`).
+		3.3 Listar estudiantes con información básica y porcentaje de completitud.
+		3.4 Ordenar estudiantes de forma ascendente y descendente por nombre o porcentaje de completitud.
+	5. Para cada estudiante:
+		5.1 Visualizar porcentaje de avance por tema.
+		5.2 Visualizar información personal (nombre, correo, sede, generación, turno).
+		5.3 Visualizar porcentaje de completitud general y clasificación de progreso.
+	6. Realizar consultas por nombre de estudiante.
 
-Tablero de datos  | Algoritmo
--------------     | -------------
-Inicio de pagina  | Mostrara un espacio que  indique donde colocara el usuario su nombre y su contraseña
-Entrar            | Despues de haber ingresado nombre y contraseña el usuario presionara el boton de **"Entrar"** para asi poder acceder a la pagina.
+#### Tecnologías
+Para desarrollo de este proyecto se utilizaron las siguientes tecnologías:
+	1. HTML5
+	2. CSS3
+	3. JavaScript (ES6)
+	4. Bootstrap
 
-**Inicio** |**Menu** 
--------------     | -------------
-**Usuario**  | Mostrara el  nombre del usuario
-**Menu**    | En esta pagina se mostraran las opciones con las que cuenta la pagina
-**Inicio**   | Aparecen opciones entre las que podra escoger el usuario las cuales son las siguientes : **Sedes,Consultas.**
-**Sede**     | Apareceran las Sedes con las que cuenta **Laboratoria.**
-**Sede LIma**|Al seleccionar la Sede Lima ,mostrara con cuantas generaciones cuenta esa Sede.
-**Generaciones**|Las Generaciones con las que cuenta esa Sede.
-**Total de Estudiantes**|El total de estudiantes que ha tenido esa Sede.
-**Estudiantes**|Los datos completos de las estudiantes.
-**Progreso Estudiantes**|El progeso academico de las estudiantes dividido en 3 segciones :**Alto : por arriba del 90%.** **Medio: por la media.** **Bajo: por debajo del 60%.**
-**Sede Mexico**|Al s eleccionar la Sede Mexico, mostrara con cuantas generaciones cuenta esa Sede
-**Generaciones**|Las Generaciones con las que cuenta esa Sede.
-**Total de Estudiantes**|El total de estudiantes que ha tenido esa Sede.
-**Estudiantes**|Los tados completos de las estudiantes.
-**Progreso Estudiantes**|El progeso academico de las estudiantes dividido en 3 segciones :**Alto : por arriba del 90%.** **Medio: por la media.** **Bajo: por debajo del 60%.**
-**Sede Santiago**|Al seleccionar la Sede Santiago ,mostrara con cuantas generaciones cuenta esa Sede
-**Generaciones**|Las Generaciones con las que cuenta esa Sede.
-**Total de Estudiantes**|El total de estudiantes que ha tenido esa Sede.
-**Estudiantes**|Los tados completos de las estudiantes.
-**Progreso Estudiantes**|El progeso academico de las estudiantes dividido en 3 segciones :**Alto : por arriba del 90%.** **Medio: por la media.** **Bajo: por debajo del 60%.**
-**Consultas**| Podra hacer una consulta directa : **Solo ingresando el nombre completo de la estudiante.**
-
-#### Este es el diseño final de la pagina.
+### Instalación
+Para realizar contribuciones a este proyecto se requiere hacer _fork_ o _clonar_ el repositorio, instalar `Node.js` y las dependencias del proyecto con el comando `npm install`.
 
 
-
-
-
-
+#### Pantallas del proyecto
 ![terceralcance](src/img/terceralcance.png)
 
 ![terceralcancea](src/img/terceralcanceb.png)
 
-
-
 ![terceralcanceb](src/img/terceralcancec.png)
-
-
 
 ![terceralcancec](src/img/terceralcanced.png)
 
-
+#### Desarrolladoras
+[Brenda Sànchez](https://github.com/sanrey254) y [Jazmìn Reyes](https://github.com/jaztan)
 
 
 
