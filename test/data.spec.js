@@ -18,7 +18,7 @@ describe('data', () => {
 
   describe('computeStudentsStats(laboratoria)', () => {
 
-    //sconst { laboratoria } = fixtures;
+    // const { laboratoria } = fixtures;
 
     it('debería retornar arreglo de students con propiedad campus y propiedad generation', () => {
       const processed = data.computeStudentsStats(fixtures);
@@ -97,8 +97,8 @@ describe('data', () => {
     }); 
   });
 
-  describe('filterStudents(users, search)', () => {
-    const processed = data.filterStudents(data.computeStudentsStats(fixtures),"Cari Candyce");
+  describe('filterStudentsByName(users, search)', () => {
+    const processed = data.filterStudentsByName(data.computeStudentsStats(fixtures),"Cari Candyce");
     it('debería retornar nuevo arreglo solo el nombre de Cari Candyce',() =>{
       assert.equal(processed.length, 2);
     });
