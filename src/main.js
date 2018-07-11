@@ -1,6 +1,6 @@
 const url = 'https://raw.githubusercontent.com/sanrey254/proyecto-2-data-dashboard/master/data/laboratoria.json';
 
-/** ********** Vista Home/Inicio ***********/
+/**  Vista Home/Inicio **/
 const drawMenu = (campus) =>{
   let j = 1;
   campus.forEach(element =>{
@@ -37,20 +37,20 @@ const drawCampus = (campus, students) =>{
 };
 
 
-/** ****************Dibujar estadisticas generales********************/
-const drawGeneralStatistics = (students, sede, generation) =>{
+/** Dibujar estadisticas generales **/
+const drawGeneralStatistics = (students, campus, generation) =>{
   const namesGroup = ['Total de estudiantes', 'ESTUDIANTES: arriba del 90%', 'ESTUDIANTES: en la media', 'ESTUDIANTES: debajo del 60%'];
   const studentsNumber = [0, 0, 0, 0];
   let filterStudents = [];
   let result = '';
 
-  if (sede === 'General') {
+  if (campus === 'General') {
     filterStudents = students;
   } else {
     if (generation === 'General') {
-      filterStudents = data.filterStudentsBySede(students, sede);
+      filterStudents = data.filterStudentsByCampus(students, campus);
     } else {
-      filterStudentsCampus = data.filterStudentsBySede(students, sede);
+      filterStudentsCampus = data.filterStudentsByCampus(students, campus);
       filterStudents = data.filterStudentsByGeneration(filterStudentsCampus, generation);
     }
   }
@@ -79,7 +79,7 @@ const drawGeneralStatistics = (students, sede, generation) =>{
   document.getElementById('general-statistic').innerHTML = result;
 };
 
-/** *********** Dibujar tablas de estudiantes *******************/
+/**  Dibujar tablas de estudiantes **/
 const drawTable = (object) =>{
   let result = '';
   object.forEach((student, i) =>{ 
@@ -94,14 +94,14 @@ const drawTable = (object) =>{
   document.getElementById('table-students-body').innerHTML = result;
 };
 
-/** ********** Vista sedes ***********/
+/**  Vista sedes **/
 
-const drawNumberOfStudents = (generations, sede) =>{
+const drawNumberOfStudents = (generations, campus) =>{
   let contY = 1;
   let years = [];
   let students = [];
   generations.forEach(elements =>{
-    if (elements.campus === sede) {	
+    if (elements.campus === campus) {	
       if (generations.indexOf(elements.generation) === -1) {
         years.push(elements.generation);
         students.push(elements.count);
@@ -118,14 +118,14 @@ const drawNumberOfStudents = (generations, sede) =>{
   document.getElementById(`students-generation${contY++}`).innerHTML = students[2];
 };
 
-const drawStudentsTable = (students, sede) =>{
-  const filterStudents = data.filterStudentsBySede(students, sede);
+const drawStudentsTable = (students, campus) =>{
+  const filterStudents = data.filterStudentsByCampus(students, campus);
   let result = '';
   drawTable(filterStudents);
   orderTable(filterStudents);
 };
 
-/** *********** Eventos para ordernar tablas ********/
+/**  Eventos para ordernar tablas **/
 const orderTable = (filterStudentsForTable) =>{
   document.getElementById('name-asc').addEventListener('click', event =>{
     event.preventDefault();
@@ -152,7 +152,7 @@ const orderTable = (filterStudentsForTable) =>{
   });
 };
 
-/** *********** Vista generaciones ***********/
+/**  Vista generaciones **/
 
 const drawGeneration = (students, campus, generation) =>{
   let studentGeneration = '';
@@ -165,7 +165,7 @@ const drawGeneration = (students, campus, generation) =>{
   if (generation === 'generation3') {
     studentGeneration = 'tercera';
   }
-  const studentsOfCampus = data.filterStudentsBySede(students, campus);
+  const studentsOfCampus = data.filterStudentsByCampus(students, campus);
   const studentsOfGeneration = data.filterStudentsByGeneration(studentsOfCampus, studentGeneration);
   let result = '';
   drawGeneralStatistics(studentsOfGeneration, campus, studentGeneration);
@@ -215,13 +215,13 @@ const getGenerationAndCampus = students =>{
   });
 };
 
-/** ********** Vista Consultas ***********/
+/**  Vista Consultas **/
 const drawSearchStudent = students =>{
   document.getElementById('btn-seach').addEventListener('click', (event) =>{
     event.preventDefault();
     const searchNameStudent = document.getElementById('name-student').value;
     if (searchNameStudent !== '' && searchNameStudent !== ' ') {
-      const studentResult = data.filterStudents(students, searchNameStudent);
+      const studentResult = data.filterStudentsByName(students, searchNameStudent);
       const headerSearchCard = `<div class="card-header d-flex align-items-center">
 									  <h2 class="h3">Resultados de la consulta</h2>
 									  <div class="badge badge-rounded bg-pinkLab">${studentResult.length} coincidencias</div>
@@ -244,7 +244,7 @@ const drawSearchStudent = students =>{
   });
 };
 
-/** ************ Vista Información por estudiante *********/
+/**  Vista Información por estudiante **/
 
 const getDrawInformation = students =>{
   const buttonSelected = document.getElementsByClassName('student-button');
@@ -263,8 +263,8 @@ const getDrawInformation = students =>{
 
 const drawStudentInformation = (students, name, campus) =>{
   document.getElementById('titile-page').innerHTML = `<a href="consultas.html">Consulta >> </a>  ${name}`;
-  const informationByCampus = data.filterStudentsBySede(students, campus);
-  const informationByStudent = data.filterStudents(informationByCampus, name);
+  const informationByCampus = data.filterStudentsByCampus(students, campus);
+  const informationByStudent = data.filterStudentsByName(informationByCampus, name);
   const topicsStudent = informationByStudent[0].stats.topics;
   const nameTopics = Object.keys(topicsStudent);
   nameTopics.forEach((topic, i) =>{
