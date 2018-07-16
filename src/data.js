@@ -5,7 +5,6 @@ window.data = {
       .then(result =>{
         const students = data.computeStudentsStats(result);
         const allCampus = data.computeCampus(result);
-        const statusGeneration = data.computeGenerationsStats(result);
         drawGeneralStatistics(students, 'General', '');
         drawCampus(allCampus, students);
         drawMenu(allCampus);
@@ -117,12 +116,11 @@ window.data = {
 	
   // Método principal para crear un arreglo con un objeto para cada estudiante de todas las sedes	  
   computeStudentsStats: laboratoria => {
-    let studentsObject = [];
+    let studentsArray = [];
     let allCampus = [];
     let allGenerations = [];
     let contI = 0;
     let contY = 0;
-    let stats = {};
     allCampus = Object.getOwnPropertyNames(laboratoria);
     generations = Object.values(laboratoria);
     generations.forEach(elements => {
@@ -133,7 +131,7 @@ window.data = {
         let student = students.estudiantes;
         student.forEach(personalInfo => {
           let stats = data.createStats(personalInfo.progreso);
-          studentsObject.push({
+          studentsArray.push({
             'campus': allCampus[contI],
             'generation': allGenerations[contY],
             'name': personalInfo.nombre,
@@ -146,8 +144,7 @@ window.data = {
       });
       contI++;
     });
-    console.log(studentsObject);
-    return studentsObject;
+    return studentsArray;
   },
  
   // Método para crear un objeto con estadisticas generales para cada una de las generaciones 	
@@ -155,7 +152,7 @@ window.data = {
     let contI = 0;
     let contY = 0;
     let sumOfPercentajes = 0;
-    generationObject = [];
+    generationArray = [];
     let allCampus = Object.getOwnPropertyNames(laboratoria);
     let generations = Object.values(laboratoria);
     generations.forEach(elements => {
@@ -168,7 +165,7 @@ window.data = {
           sumOfPercentajes += personalInfo.progreso.porcentajeCompletado;
         });
         let average = Math.round(sumOfPercentajes / students.estudiantes.length);
-        generationObject.push({
+        generationArray.push({
           'campus': allCampus[contI],
           'generation': allGenerations[contY],
           'count': students.estudiantes.length,
@@ -178,7 +175,7 @@ window.data = {
       });
       contI++;
     });
-    return generationObject;
+    return generationArray;
   },
   
   // Método que permite ordenar un arreglo de objetos por cuatro criterios distintos de forma ascendente y descendente (nombre y porcentaje)
